@@ -1,8 +1,63 @@
 ﻿# LangChain Agent Course
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](./LICENSE)
+![Course Stages](https://img.shields.io/badge/Stages-1--8-blue)
+![Project Mode](https://img.shields.io/badge/Learning-Project--Based-orange)
+![Agent Stack](https://img.shields.io/badge/Stack-LangChain%20%7C%20LangGraph%20%7C%20Deep%20Agents-black)
+![Build Status](https://img.shields.io/badge/Status-Actively%20Building-success)
+
 一个面向 IDE + Codex 协作学习的完整 Agent 教学课程，围绕 `LangChain`、`LangGraph`、`Deep Agents` 展开，并系统覆盖 `MCP`、`RAG`、`Memory`、数据库、后端 API、前端 Agent UX、评测、观测、部署与毕业项目。
 
 这不是一份单次写完的“教程文档”，而是一套可以持续扩建的课程工程。目标是让学习者不是只会“调用一个 Agent”，而是能在 AI Agent 的帮助下，从后端到前端构建一个功能完整、结构清晰、可评测、可迭代的 Agent 产品。
+
+## Quick Start
+
+- [Start Here](./00-start-here/README.md)
+- [Course Roadmap](./01-curriculum/course-roadmap.md)
+- [Stages Index](./01-curriculum/stages/README.md)
+- [Stage 1 Course Pack](./01-curriculum/stages/stage-1-agent-foundations/README.md)
+- [Project Teaching Protocol](./03-projects/ai-project-teaching-protocol.md)
+
+## At a Glance
+
+**What this repo is**
+
+一个完整的 Agent 学习课程仓库，不只是文档集合，而是一套阶段化、项目化、可用 Codex 结对推进的学习系统。
+
+**What makes it different**
+
+- 不从 API 调用开始，而从系统判断开始
+- 不只教后端 Agent，也覆盖前端 Agent UX 和全栈交付
+- 每个阶段都有跟学项目、课后项目、效果标准和验收标准
+- 最终收束到一个可答辩、可复盘、可迁移的毕业项目
+
+**Final outcome**
+
+学习者能够在 AI Agent 的帮助下，设计并交付一个从后端到前端的 Agent 产品原型。
+
+## Course Roadmap Snapshot
+
+```text
+Stage 1  Agent Foundations     -> 判断一个需求是否真的需要 Agent
+Stage 2  LangChain Builder     -> 搭出高层 Agent 原型
+Stage 3  LangGraph Systems     -> 设计状态、分支、审批、恢复
+Stage 4  Deep Agents           -> 处理复杂任务、规划、子代理、上下文工程
+Stage 5  Agent Engineering     -> 接入 MCP / RAG / Memory / DB / API / Eval
+Stage 6  Agent Frontend        -> 设计 Agent UX、Streaming、审批界面、状态可视化
+Stage 7  Full-stack Delivery   -> 组装、部署、追踪、评测、交付
+Stage 8  Capstone Mastery      -> 完成毕业项目、答辩、复盘与迁移
+```
+
+## Course Map
+
+| Layer | What You Learn | Key Entry |
+| --- | --- | --- |
+| Foundations | Agent 系统判断、边界、失败路径 | [Stage 1](./01-curriculum/stages/stage-1-agent-foundations/README.md) |
+| Frameworks | LangChain、LangGraph、Deep Agents 三层主线 | [Stages](./01-curriculum/stages/README.md) |
+| Engineering | MCP、RAG、Memory、DB、API、Eval、治理 | [Stage 5](./01-curriculum/stages/stage-5-agent-engineering/README.md) |
+| Frontend | Agent UX、Streaming、审批、结构化展示 | [Stage 6](./01-curriculum/stages/stage-6-agent-frontend/README.md) |
+| Delivery | 全栈交付、部署、评测、产品化 | [Stage 7](./01-curriculum/stages/stage-7-fullstack-delivery/README.md) |
+| Capstone | 毕业项目、答辩、复盘、迁移 | [Stage 8](./01-curriculum/stages/stage-8-capstone-mastery/README.md) |
 
 ## What This Repo Covers
 
