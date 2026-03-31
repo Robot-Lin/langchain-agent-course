@@ -1,110 +1,133 @@
-# 02 Concepts
+﻿# 02 Concepts
 
-## 1. 工程化层在课程里的位置
+## 1. 工程化层不是“附加题”
 
-这一层不是额外附加题，而是 Agent 走向真实系统的必要部分。
+很多新手会把工程化理解成“项目做完后再补的部分”。这在 Agent 场景里通常会出问题。
+因为 Agent 一旦：
 
-没有这层，Agent 往往只能停留在:
+- 连接外部知识
+- 调用外部工具
+- 接触业务数据
+- 对外执行动作
 
-- Demo
-- 单机实验
-- 只对单次输入有效的原型
+它就已经是一个系统问题，而不只是 prompt 问题。
 
 ## 2. 什么是 MCP
 
-官方文档将 MCP 定义为一种开放协议，用于把外部工具和上下文能力以标准方式暴露给模型或 Agent。
+官方把 MCP 解释为一种开放协议，用标准方式把外部能力暴露给模型或 Agent。课程里最重要的理解不是“它是一种新工具”，而是：
 
-课程里的关键理解是:
+- 它标准化了能力暴露方式。
+- 它让 Agent 接入外部系统时更一致。
+- 它让“工具接入”逐渐从临时拼装变成可复用接口。
 
-- MCP 不只是“又一种工具”
-- 它是标准化接入外部能力的协议方式
-- 它让 Agent 能更稳定地接入外部系统和能力源
-
-参考:
+参考：
 
 - [Model Context Protocol (MCP)](https://docs.langchain.com/oss/python/langchain/mcp)
 
 ## 3. 什么是 RAG
 
-RAG 是通过检索外部知识，让 Agent 在受控知识范围内回答或决策。
+RAG 不是“给模型更多上下文”这么简单。它真正解决的是：
 
-它解决的是:
+- 模型知识过期。
+- 回答必须基于受控资料。
+- 回答需要引用外部文档而不是靠记忆猜测。
 
-- 模型知识过期
-- 需要引用特定文档
-- 需要在限定知识边界内工作
+在工程视角下，RAG 是知识层，不是状态层，也不是业务数据层。
 
-参考:
+参考：
 
 - [Build a RAG agent with LangChain](https://docs.langchain.com/oss/python/langchain/rag)
 
-## 4. Memory、知识库、数据库的区别
+## 4. memory、知识库、数据库的区别
 
-这是本阶段最重要的边界问题之一。
+这是 Stage 5 最重要的边界之一。
 
-- Memory: 系统保留与用户、任务、偏好相关的连续性信息
-- 知识库: 供检索的外部资料和文档
-- 数据库: 系统状态、业务数据、审计记录等可靠存储
+### memory
 
-如果三者混在一起，系统会很难治理。
+memory 记录的是连续性。比如：
 
-参考:
+- 用户偏好
+- 当前会话上下文
+- 长期用户设定
+- 某个任务中需要记住的中间事实
+
+参考：
 
 - [Memory overview](https://docs.langchain.com/oss/python/concepts/memory)
 - [Long-term memory](https://docs.langchain.com/oss/python/langchain/long-term-memory)
 
+### 知识库
+
+知识库用于检索外部资料。它服务的是“查找与引用”，比如：
+
+- 公司制度文档
+- 产品文档
+- 研究资料
+- 常见问题手册
+
+### 数据库
+
+数据库承载的是业务真相和系统状态，比如：
+
+- 订单
+- 客户记录
+- 工单状态
+- 审批日志
+- 执行记录
+
+如果把这三者混为一谈，系统就会出现边界模糊、治理困难、追责困难的问题。
+
 ## 5. 后端 API 的角色
 
-后端 API 是 Agent 与业务系统连接的主要边界之一。
+后端 API 不只是让前端拿数据，它还是 Agent 与业务系统之间的重要边界。
 
-它通常负责:
+它通常负责：
 
-- 数据读写
-- 业务动作触发
-- 权限控制
-- 与前端交互的数据通路
+- 暴露受控业务能力。
+- 屏蔽底层服务复杂度。
+- 统一权限和审计。
+- 把 Agent 的动作转成可管理的系统调用。
 
-课程里的重点不是某一种框架，而是理解 API 作为系统边界的作用。
+课程里要学的重点不是某个框架，而是 API 作为边界层的责任。
 
 ## 6. Observability
 
-LangSmith 官方文档把 observability 放在调试、追踪和理解 Agent 运行过程的核心位置。
+Agent 的可观测性不是“看最终回答好不好”，而是看：
 
-课程里的关键理解是:
+- 中间步骤是什么。
+- 调用了哪些工具。
+- 哪一步检索失败了。
+- 哪一步 reasoning 或状态更新偏掉了。
+- 哪个环节导致了错误输出。
 
-- 你不能只看最终结果
-- 你还要看中间步骤、工具调用、状态变化和失败路径
-
-参考:
+参考：
 
 - [LangSmith Observability](https://docs.langchain.com/oss/python/langchain/observability)
+- [Tracing quickstart](https://docs.langchain.com/langsmith/observability-quickstart)
 
 ## 7. Evaluation
 
-LangSmith 官方文档明确区分不同评测方式，并强调评测应在上线前和运行中都持续发生。
+官方把 evaluation 拆成明确的持续流程，而不是一次性的测试动作。课程里最关键的理解是：
 
-课程里的关键理解是:
+- Evaluation 要覆盖上线前和运行中。
+- 不同类型的 Agent 要有不同指标。
+- RAG、聊天、工作流、动作型 agent 的评测目标不同。
 
-- Evaluation 不是“偶尔测一下”
-- 它是持续验证系统质量的机制
-- RAG、聊天、工作流都需要不同评测视角
-
-参考:
+参考：
 
 - [LangSmith Evaluation](https://docs.langchain.com/langsmith/evaluation)
+- [Evaluation types](https://docs.langchain.com/langsmith/evaluation-types)
 - [Evaluate a RAG application](https://docs.langchain.com/langsmith/evaluate-rag-tutorial)
 
-## 8. 治理与权限
+## 8. Governance 与权限
 
-当 Agent 开始接工具、接业务系统、接知识和数据时，治理就变成一等公民。
+只要 Agent 开始触碰真实系统，治理就不是可选项。你至少要回答：
 
-课程里需要重点考虑:
+- 谁可以触发哪些能力。
+- 哪些动作需要确认或审批。
+- 哪些数据可以读，哪些数据不能读。
+- 哪些行为必须留下审计记录。
 
-- 谁能触发什么能力
-- 哪些动作需要审批
-- 哪些数据能被读取
-- 哪些操作必须有日志与审计
+## 9. Stage 5 的结论
 
-## 9. Stage 5 最重要的结论
-
-一个真正可用的 Agent 系统，不只是“会做任务”，还必须知道自己接了什么、存了什么、看了什么、做了什么，以及如何被验证和追踪。
+一个真正可用的 Agent 系统，不只是“回答得聪明”，而是它知道自己连了什么、查了什么、存了什么、做了什么，并且这些过程都能被追踪、评测和治理。

@@ -1,70 +1,61 @@
-# Stage 4: Deep Agents
+﻿# Stage 4: Deep Agents
 
-## 阶段目标
+## Stage Goal
 
-- 理解复杂任务型 Agent 的组织方式
-- 学会规划、上下文工程、子代理和复杂任务治理
-- 识别 Deep Agents 的适用边界
+`Stage 4` 的任务是让学习者从图系统设计升级到复杂任务组织设计。学完这一阶段，学习者应该能利用 `Deep Agents` 思维，把一个开放、长程、多角色、多层上下文的任务组织成可执行、可管理、可治理的 Agent 结构。
 
-## 关联官方主线
+## What You Will Learn
+
+- Deep Agents 在新版架构中的角色与价值
+- 什么任务适合或不适合 Deep Agents
+- planning、context engineering、subagents、human-in-the-loop 与治理的关系
+- 如何把复杂目标拆成阶段、角色和汇总结构
+- 如何判断任务为什么更适合 Deep Agents 而不是普通 LangGraph 工作流
+
+## Learning Outcomes
+
+完成这一阶段后，你应该能:
+
+- 识别复杂任务型 Agent 的适用边界
+- 设计复杂目标拆解图
+- 设计上下文分层
+- 判断并设计必要的 subagents
+- 设计治理点和审核点防止任务偏航
+- 说明为什么当前任务更适合 Deep Agents
+
+## Recommended Path
+
+1. [Stage 4 教学包入口](./stage-4-deep-agents/README.md)
+2. [Stage Overview](./stage-4-deep-agents/01-overview.md)
+3. [Core Concepts](./stage-4-deep-agents/02-concepts.md)
+4. [Case Comparisons](./stage-4-deep-agents/09-case-comparisons.md)
+5. [Methods](./stage-4-deep-agents/03-methods.md)
+6. [Session Roadmap](./stage-4-deep-agents/08-session-roadmap.md)
+7. [Guided Project](./stage-4-deep-agents/04-guided-project.md)
+8. [Challenges](./stage-4-deep-agents/05-challenges.md)
+9. [Review Checklist](./stage-4-deep-agents/06-review-checklist.md)
+10. [Codex Workshop](./stage-4-deep-agents/07-codex-workshop.md)
+
+## Official Backbone
 
 - [Deep Agents overview](https://docs.langchain.com/oss/python/deepagents/overview)
-- [Context engineering](https://docs.langchain.com/oss/python/deepagents/context-engineering)
-- [Customization](https://docs.langchain.com/oss/python/deepagents/customization)
+- [Context engineering in Deep Agents](https://docs.langchain.com/oss/python/deepagents/context-engineering)
+- [Customize Deep Agents](https://docs.langchain.com/oss/python/deepagents/customization)
 - [Human-in-the-loop](https://docs.langchain.com/oss/python/deepagents/human-in-the-loop)
+- [When to use the Deep Agents SDK](https://docs.langchain.com/oss/python/concepts/products#when-to-use-the-deep-agents-sdk)
 
-## 学习重点
+## Stage Projects
 
-- 复杂任务规划
-- Context engineering
-- Subagents
-- 人类审批
-- 任务分解与长期执行
+- [Stage 4 Projects](../../03-projects/stage-4/README.md)
+- [Guided Project: Deep Research Agent](../../03-projects/stage-4/guided-project-deep-research-agent.md)
+- [Homework Project: Content Strategy Agent](../../03-projects/stage-4/homework-project-content-strategy-agent.md)
 
-## 阅读知识
+## Stage Gate
 
-- Deep Agents 与普通 Agent 的差别
-- 为什么复杂任务的难点是上下文组织而不只是工具调用
-- 什么情况下 subagents 是必要的
+如果你还不能稳定回答下面这些问题，建议继续停留在 `Stage 4`:
 
-## 方法掌握
-
-- 复杂任务拆解法:
-  先拆目标
-  再拆阶段
-  再拆角色
-  再设计回收与汇总机制
-
-- 上下文工程法:
-  只给完成当前任务真正需要的上下文
-  将长期资料、短期状态和任务指令分层管理
-
-## 引导项目
-
-- 深度研究 Agent
-- 创作者内容策划 Agent
-- 代码库理解顾问
-
-## 主动练习
-
-- 选择一个复杂任务，写出:
-  主代理职责
-  子代理职责
-  审批点
-  输出汇总方式
-
-## 放行标准
-
-- 能清楚解释 Deep Agents 的定位
-- 能设计子代理协作结构
-- 能指出复杂任务 Agent 的失控风险
-
-## 详细教学包
-
-- [Stage 4 入口](X:/AI%20work/LangChain%20Tutorial/01-curriculum/stages/stage-4-deep-agents/README.md)
-- [核心概念](X:/AI%20work/LangChain%20Tutorial/01-curriculum/stages/stage-4-deep-agents/02-concepts.md)
-- [方法模板](X:/AI%20work/LangChain%20Tutorial/01-curriculum/stages/stage-4-deep-agents/03-methods.md)
-- [引导项目](X:/AI%20work/LangChain%20Tutorial/01-curriculum/stages/stage-4-deep-agents/04-guided-project.md)
-- [主动练习](X:/AI%20work/LangChain%20Tutorial/01-curriculum/stages/stage-4-deep-agents/05-challenges.md)
-- [考核与复盘](X:/AI%20work/LangChain%20Tutorial/01-curriculum/stages/stage-4-deep-agents/06-review-checklist.md)
-- [与 Codex 对练](X:/AI%20work/LangChain%20Tutorial/01-curriculum/stages/stage-4-deep-agents/07-codex-workshop.md)
+- 为什么这个复杂任务需要上下文分层
+- 为什么这里的 subagents 是真必要，而不是炫技
+- 为什么复杂任务的失控风险不只是“答错了”
+- 为什么这个任务更适合 Deep Agents，而不是普通 LangGraph 工作流
+- 你的汇总与治理机制如何防止任务越跑越散
