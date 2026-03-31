@@ -1,60 +1,60 @@
-# Stage 1: Agent Foundations
+﻿# Stage 1: Agent Foundations
 
-## 阶段目标
+## Stage Goal
 
-- 从 0 建立 Agent 的系统心智模型
-- 能判断一个需求是否真的需要 Agent
-- 能拆出输入、输出、工具、状态、记忆和边界
+`Stage 1` 的任务是建立 Agent 学习的底层判断力，而不是急着进入框架实现。学完这一阶段，学习者应该能先判断一个需求是否真的需要 Agent，再决定后续是否进入 `LangChain`、`LangGraph` 或 `Deep Agents`。
 
-## 学习重点
+## What You Will Learn
 
-- Agent 与普通聊天机器人的差别
-- Agent 的最小组成
-- 什么时候需要工具
-- 什么时候需要状态和记忆
-- 失败路径、风险和可控性
+- Agent 与普通聊天机器人的本质差别
+- 什么情况下需要工具，什么情况下不需要
+- 什么情况下需要状态、记忆与知识库
+- 什么情况下必须设置 human-in-the-loop
+- 为什么很多“看起来很聪明”的系统其实不适合上线
+- 如何在不写代码的前提下完成最小 Agent 设计
 
-## 阅读知识
+## Learning Outcomes
 
-- Agent 是系统，不是提示词
-- 工具、状态、记忆、反馈如何构成闭环
-- 为什么“能回答”不等于“能完成任务”
+完成这一阶段后，你应该能:
 
-## 方法掌握
+- 判断一个场景是否值得设计成 Agent
+- 用自然语言讲清楚一个最小可行 Agent 的系统结构
+- 识别失败路径、风险点和人工接管点
+- 在进入框架实现前先完成系统边界设计
 
-- 需求拆解五问:
-  这个系统为谁服务
-  它要完成什么动作
-  它需要什么外部能力
-  哪些步骤可自动执行
-  哪些地方必须由人确认
+## Recommended Path
 
-- 最小 Agent 设计法:
-  只保留一个目标、一种输入、一种输出、一条主路径
+1. [Stage 1 教学包入口](./stage-1-agent-foundations/README.md)
+2. [Stage Overview](./stage-1-agent-foundations/01-overview.md)
+3. [Core Concepts](./stage-1-agent-foundations/02-concepts.md)
+4. [Case Comparisons](./stage-1-agent-foundations/09-case-comparisons.md)
+5. [Methods](./stage-1-agent-foundations/03-methods.md)
+6. [Session Roadmap](./stage-1-agent-foundations/08-session-roadmap.md)
+7. [Guided Project](./stage-1-agent-foundations/04-guided-project.md)
+8. [Challenges](./stage-1-agent-foundations/05-challenges.md)
+9. [Review Checklist](./stage-1-agent-foundations/06-review-checklist.md)
+10. [Codex Workshop](./stage-1-agent-foundations/07-codex-workshop.md)
 
-## 引导项目
+## Stage 1 Deliverables
 
-- FAQ 助手
-- 结构化信息抽取助手
+- 一份最小 Agent 设计画布
+- 一份需求拆解表
+- 一份失败路径清单
+- 一份审批与人工介入说明
+- 一段自然语言架构说明
 
-## 主动练习
+## Stage Projects
 
-- 把一个你熟悉的工作场景拆成 Agent 结构图
-- 判断其中哪些部分根本不需要 Agent
-- 用自然语言写出系统边界
+- [Stage 1 Projects](../../03-projects/stage-1/README.md)
+- [Guided Project: FAQ Agent](../../03-projects/stage-1/guided-project-faq-agent.md)
+- [Homework Project: Learning Coach Agent](../../03-projects/stage-1/homework-project-learning-coach.md)
 
-## 放行标准
+## Stage Gate
 
-- 能画一个最小 Agent 图
-- 能解释为什么引入工具、状态或记忆
-- 能说出至少 3 个失败点
+如果你还不能稳定回答下面这些问题，建议继续停留在 `Stage 1`:
 
-## 详细教学包
-
-- [Stage 1 入口](X:/AI%20work/LangChain%20Tutorial/01-curriculum/stages/stage-1-agent-foundations/README.md)
-- [核心概念](X:/AI%20work/LangChain%20Tutorial/01-curriculum/stages/stage-1-agent-foundations/02-concepts.md)
-- [方法模板](X:/AI%20work/LangChain%20Tutorial/01-curriculum/stages/stage-1-agent-foundations/03-methods.md)
-- [引导项目](X:/AI%20work/LangChain%20Tutorial/01-curriculum/stages/stage-1-agent-foundations/04-guided-project.md)
-- [主动练习](X:/AI%20work/LangChain%20Tutorial/01-curriculum/stages/stage-1-agent-foundations/05-challenges.md)
-- [考核与复盘](X:/AI%20work/LangChain%20Tutorial/01-curriculum/stages/stage-1-agent-foundations/06-review-checklist.md)
-- [与 Codex 对练](X:/AI%20work/LangChain%20Tutorial/01-curriculum/stages/stage-1-agent-foundations/07-codex-workshop.md)
+- 为什么这个需求需要 Agent，而不是普通应用逻辑
+- 哪些地方必须接工具，哪些地方不该加工具
+- 哪些信息属于状态，哪些属于记忆，哪些只是知识库
+- 哪些动作必须停下来交给人确认
+- 这个系统最可能失败在哪
