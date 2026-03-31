@@ -17,6 +17,8 @@
 - [Stages Index](./01-curriculum/stages/README.md)
 - [Stage 1 Course Pack](./01-curriculum/stages/stage-1-agent-foundations/README.md)
 - [Project Teaching Protocol](./03-projects/ai-project-teaching-protocol.md)
+- [Repository Roadmap](./ROADMAP.md)
+- [Changelog](./CHANGELOG.md)
 
 ## At a Glance
 
@@ -34,6 +36,13 @@
 **Final outcome**
 
 学习者能够在 AI Agent 的帮助下，设计并交付一个从后端到前端的 Agent 产品原型。
+
+## Project Status
+
+- [Current Build Status](./COURSE_BUILD_STATUS.md)
+- [Repository Roadmap](./ROADMAP.md)
+- [Changelog](./CHANGELOG.md)
+- [Contributing Guide](./CONTRIBUTING.md)
 
 ## Course Roadmap Snapshot
 
@@ -218,6 +227,9 @@ Stage 8  Capstone Mastery      -> 完成毕业项目、答辩、复盘与迁移
 当前仍可继续增强：
 
 - 每个知识模块继续扩写成更厚的教材
+- 为每个 Stage 拆出更细的 lesson / session
+- 增加可运行参考实现与更完整的项目演示
+- 强化评测、观测、前端体验与毕业项目支撑材料
 - 每个项目继续扩成更完整的教学案例包
 - 加入更多练习题、案例库、错题库
 - 补更多前端原型模板与可运行示例
