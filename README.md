@@ -1,70 +1,203 @@
-# LangChain Agent 学习课程
+﻿# LangChain Agent Course
 
-这是一个面向 IDE 内协作学习的 Agent 教学系统。课程围绕 LangChain、LangGraph、Deep Agents 展开，并把 MCP、RAG、数据库、后端、前端、Skill、评测、部署、人机协作一起纳入完整知识体系。
+一个面向 IDE + Codex 协作学习的完整 Agent 教学课程，围绕 `LangChain`、`LangGraph`、`Deep Agents` 展开，并系统覆盖 `MCP`、`RAG`、`Memory`、数据库、后端 API、前端 Agent UX、评测、观测、部署与毕业项目。
 
-这套课程不是一次性写完的“大课本”，而是一个可以持续扩建的学习工程。我们会像搭积木一样，从外层框架到内层细节，逐步把知识库、项目库、考核系统和实战模板补齐。
+这不是一份单次写完的“教程文档”，而是一套可以持续扩建的课程工程。目标是让学习者不是只会“调用一个 Agent”，而是能在 AI Agent 的帮助下，从后端到前端构建一个功能完整、结构清晰、可评测、可迭代的 Agent 产品。
 
-## 课程目标
+## What This Repo Covers
 
-- 让学习者在不手写代码为主的前提下，通过问答、Vibe Coding、与 Codex 协作的方式，真正理解 Agent 系统如何被设计、拆解、构建、验证和迭代。
-- 让学习者不仅会“调用一个 Agent”，而且知道什么时候该用 LangChain，什么时候该下沉到 LangGraph，什么时候该直接采用 Deep Agents。
-- 让学习者具备从需求描述到可落地 Agent 产品原型的完整能力，包括后端能力、工具接入、知识接入、用户体验和部署思维。
+- 从 Agent 基础心智模型开始，而不是直接堆 API
+- 逐步掌握 LangChain 高层原型、LangGraph 状态化系统、Deep Agents 复杂任务组织
+- 系统学习 MCP、RAG、Memory、数据库、后端接口、前端 Agent UX、评测、观测、部署
+- 把 Agent 做成真正可用的前端产品，而不是只有聊天框
+- 最终完成一个从后端到前端的毕业级 Agent 项目
 
-## 目标用户画像
+## Who This Course Is For
 
-- 对 Agent 已经有基础认知
-- 有一定提示词构建经验
-- 知道 Anthropic Skill 这类能力封装的思路
-- 能够清楚描述自己的需求和产品想法
-- 希望在 IDE 环境里和 Codex 一起学习、拆题、搭建、验证
+适合这样的学习者：
 
-## 官方架构主线
+- 对 Agent 已经有基础了解
+- 有一定提示词构建能力
+- 知道 Anthropic Skill 一类能力封装思路
+- 能描述自己的需求和产品想法
+- 希望在 IDE 中与 Codex 结对学习、拆题、设计和落地
 
-这套课程当前以 LangChain 官方新版文档为架构依据。
+## Learning Goal
 
-- LangChain: 高层 Agent 开发框架，主打更快做出可用 Agent。
-- LangGraph: 更底层的 Agent runtime 和 workflow orchestration，主打状态、持久化、恢复、interrupt、人机协作和生产级控制。
-- Deep Agents: 更适合复杂任务的高层入口，强调规划、上下文工程、子代理、长期任务执行和复杂问题求解。
+完成这套课程后，学习者应能：
 
-官方参考入口:
+- 判断一个需求是否真的需要 Agent
+- 知道什么时候该用 LangChain、什么时候该下沉到 LangGraph、什么时候适合 Deep Agents
+- 设计 Agent 的工具层、知识层、状态层、体验层、治理层和评测层
+- 在 AI Agent 协作下完成一个从后端到前端的 Agent 产品原型
+- 能清楚解释自己的架构、交付路径、风险边界和下一步迭代方向
 
-- [LangChain overview](https://docs.langchain.com/oss/python/langchain/overview)
-- [LangGraph overview](https://docs.langchain.com/oss/python/langgraph/overview)
-- [Deep Agents overview](https://docs.langchain.com/oss/python/deepagents/overview)
+## Official Reference Backbone
+
+这套课程当前以 LangChain 官方新版文档为主线依据：
+
+- [LangChain Overview](https://docs.langchain.com/oss/python/langchain/overview)
+- [LangGraph Overview](https://docs.langchain.com/oss/python/langgraph/overview)
+- [Deep Agents Overview](https://docs.langchain.com/oss/python/deepagents/overview)
 - [Model Context Protocol (MCP)](https://docs.langchain.com/oss/python/langchain/mcp)
+- [LangSmith Deployment](https://docs.langchain.com/langsmith/deployment)
+- [LangSmith Evaluation](https://docs.langchain.com/langsmith/evaluation)
 
-## 当前已经搭好的第一层结构
+## Course Structure
 
-- [00-start-here/README.md](X:/AI%20work/LangChain%20Tutorial/00-start-here/README.md)
-- [01-curriculum/course-roadmap.md](X:/AI%20work/LangChain%20Tutorial/01-curriculum/course-roadmap.md)
-- [01-curriculum/learning-loop.md](X:/AI%20work/LangChain%20Tutorial/01-curriculum/learning-loop.md)
-- [01-curriculum/fullstack-agent-path.md](X:/AI%20work/LangChain%20Tutorial/01-curriculum/fullstack-agent-path.md)
-- [01-curriculum/stages/README.md](X:/AI%20work/LangChain%20Tutorial/01-curriculum/stages/README.md)
-- [01-curriculum/competency-matrix.md](X:/AI%20work/LangChain%20Tutorial/01-curriculum/competency-matrix.md)
-- [01-curriculum/stage-gates.md](X:/AI%20work/LangChain%20Tutorial/01-curriculum/stage-gates.md)
-- [02-knowledge-base/README.md](X:/AI%20work/LangChain%20Tutorial/02-knowledge-base/README.md)
-- [03-projects/project-catalog.md](X:/AI%20work/LangChain%20Tutorial/03-projects/project-catalog.md)
-- [03-projects/ai-project-teaching-protocol.md](X:/AI%20work/LangChain%20Tutorial/03-projects/ai-project-teaching-protocol.md)
-- [03-projects/fullstack-capstone/README.md](X:/AI%20work/LangChain%20Tutorial/03-projects/fullstack-capstone/README.md)
-- [04-assessments/README.md](X:/AI%20work/LangChain%20Tutorial/04-assessments/README.md)
-- [04-assessments/rubric.md](X:/AI%20work/LangChain%20Tutorial/04-assessments/rubric.md)
-- [05-codex-collaboration/README.md](X:/AI%20work/LangChain%20Tutorial/05-codex-collaboration/README.md)
-- [COURSE_BUILD_STATUS.md](X:/AI%20work/LangChain%20Tutorial/COURSE_BUILD_STATUS.md)
+### Stage 1-8
 
-## 使用方式
+课程已经搭成完整的八阶段结构：
 
-- 先读 [00-start-here/README.md](X:/AI%20work/LangChain%20Tutorial/00-start-here/README.md)
-- 再看 [01-curriculum/course-roadmap.md](X:/AI%20work/LangChain%20Tutorial/01-curriculum/course-roadmap.md)
-- 再看 [01-curriculum/learning-loop.md](X:/AI%20work/LangChain%20Tutorial/01-curriculum/learning-loop.md)
-- 然后进入 [01-curriculum/stages/README.md](X:/AI%20work/LangChain%20Tutorial/01-curriculum/stages/README.md) 按阶段学习
-- 然后按阶段进入知识库和项目库
-- 项目学习时，先看 [03-projects/ai-project-teaching-protocol.md](X:/AI%20work/LangChain%20Tutorial/03-projects/ai-project-teaching-protocol.md)
-- 每完成一段，就回到 [01-curriculum/stage-gates.md](X:/AI%20work/LangChain%20Tutorial/01-curriculum/stage-gates.md) 做阶段检查
+| Stage | Theme | Outcome |
+| --- | --- | --- |
+| 1 | Agent Foundations | 建立 Agent 系统判断力 |
+| 2 | LangChain Builder | 搭建高层 Agent 原型 |
+| 3 | LangGraph Systems | 设计状态化、可审批、可恢复系统 |
+| 4 | Deep Agents | 处理复杂任务、规划、上下文工程、子代理 |
+| 5 | Agent Engineering | 接入 MCP、RAG、数据层、评测、治理 |
+| 6 | Agent Frontend | 设计 Agent UX、流式交互、审批界面 |
+| 7 | Full-stack Delivery | 组装全栈产品、部署、评测、交付 |
+| 8 | Capstone Mastery | 完成毕业项目、答辩、复盘与迁移 |
 
-## 共建原则
+阶段入口：
 
-- 先搭框架，再补细节
-- 先统一概念，再做项目
-- 先做可验证的小系统，再做复杂大系统
-- 先会描述和拆解，再逐步理解实现
-- 尽量通过 Codex 结对协作，而不是把学习过程变成“纯复制代码”
+- [Stages Index](./01-curriculum/stages/README.md)
+- [Course Roadmap](./01-curriculum/course-roadmap.md)
+- [Stage Gates](./01-curriculum/stage-gates.md)
+
+## How Learning Works
+
+每个阶段都不是单纯“看概念”，而是按同一闭环推进：
+
+1. 阅读知识
+2. 理解方法
+3. 跟做引导项目
+4. 独立完成课后项目
+5. 接受阶段考核
+6. 做复盘与迁移
+
+查看：
+
+- [Learning Loop](./01-curriculum/learning-loop.md)
+- [Competency Matrix](./01-curriculum/competency-matrix.md)
+
+## Project-Based Teaching Design
+
+每个阶段都配两类项目：
+
+- `Guided Project`
+  AI 先读知识文件，再读项目文件，按知识点顺序一步步带学
+- `Homework Project`
+  只给需求与验收标准，不直接给完整答案，由学习者独立完成，再由 AI 做评审
+
+项目机制说明：
+
+- [AI Project Teaching Protocol](./03-projects/ai-project-teaching-protocol.md)
+- [Project Catalog](./03-projects/project-catalog.md)
+- [Project Templates](./03-projects/templates/README.md)
+
+分阶段项目入口：
+
+- [Stage 1 Projects](./03-projects/stage-1/README.md)
+- [Stage 2 Projects](./03-projects/stage-2/README.md)
+- [Stage 3 Projects](./03-projects/stage-3/README.md)
+- [Stage 4 Projects](./03-projects/stage-4/README.md)
+- [Stage 5 Projects](./03-projects/stage-5/README.md)
+- [Stage 6 Projects](./03-projects/stage-6/README.md)
+- [Stage 7 Projects](./03-projects/stage-7/README.md)
+- [Stage 8 Projects](./03-projects/stage-8/README.md)
+
+## Repository Guide
+
+### Start Here
+
+- [00-start-here](./00-start-here/README.md)
+- [How to Learn with Codex](./00-start-here/how-to-learn-with-codex.md)
+
+### Curriculum
+
+- [Curriculum Index](./01-curriculum/README.md)
+- [Full-stack Agent Path](./01-curriculum/fullstack-agent-path.md)
+
+### Knowledge Base
+
+- [Knowledge Base Index](./02-knowledge-base/README.md)
+- [Agent Foundations](./02-knowledge-base/01-agent-foundations/README.md)
+- [LangChain](./02-knowledge-base/02-langchain/README.md)
+- [LangGraph](./02-knowledge-base/03-langgraph/README.md)
+- [Deep Agents](./02-knowledge-base/04-deep-agents/README.md)
+- [Cross-cutting Systems](./02-knowledge-base/05-cross-cutting-systems/README.md)
+- [Frontend Agent Experience](./02-knowledge-base/06-frontend-agent-experience/README.md)
+- [Agent Framework Landscape](./02-knowledge-base/07-agent-framework-landscape/README.md)
+
+### Assessments
+
+- [Assessments](./04-assessments/README.md)
+- [Rubric](./04-assessments/rubric.md)
+
+### Codex Collaboration
+
+- [Codex Collaboration](./05-codex-collaboration/README.md)
+- [Session Patterns](./05-codex-collaboration/session-patterns.md)
+
+## Recommended Reading Order
+
+如果你是第一次进入这个仓库，建议按下面顺序开始：
+
+1. [Start Here](./00-start-here/README.md)
+2. [Course Roadmap](./01-curriculum/course-roadmap.md)
+3. [Learning Loop](./01-curriculum/learning-loop.md)
+4. [Stages Index](./01-curriculum/stages/README.md)
+5. [Stage 1 Course Pack](./01-curriculum/stages/stage-1-agent-foundations/README.md)
+
+## Current Build Status
+
+当前已经完成：
+
+- Stage 1 到 Stage 8 的完整教学包骨架
+- 每个阶段的知识、方法、引导项目、课后项目、验收标准、Codex 对练脚本
+- 项目教学协议与分阶段项目目录
+- 全栈 Agent 学习路径、阶段放行标准与 Rubric
+
+当前仍可继续增强：
+
+- 每个知识模块继续扩写成更厚的教材
+- 每个项目继续扩成更完整的教学案例包
+- 加入更多练习题、案例库、错题库
+- 补更多前端原型模板与可运行示例
+
+查看：
+
+- [COURSE_BUILD_STATUS.md](./COURSE_BUILD_STATUS.md)
+
+## How to Use This Repo with Codex
+
+推荐在 IDE 中直接和 Codex 配合：
+
+- 让 Codex 先讲解某个阶段
+- 让 Codex 按项目文件一步步带学
+- 做课后项目时要求 Codex 只做导师和评审，不直接给最终答案
+- 做完后让 Codex 按验收标准打分和指出缺口
+
+## Contribution Direction
+
+如果后续继续扩建这个仓库，最值得优先补的方向是：
+
+- Stage 1-8 的更深知识解释文档
+- 每个阶段的完整案例包
+- 可运行 demo 和前端原型
+- 开源协作说明、许可证与贡献流程
+
+查看：
+
+- [CONTRIBUTING.md](./CONTRIBUTING.md)
+- [LICENSE](./LICENSE)
+
+## Vision
+
+这套课程的最终目标不是“会用几个 Agent 框架”，而是让学习者真正掌握一套构建方法：
+
+从问题判断，到系统设计，到框架选择，到工程化落地，到前端体验，再到全栈交付与毕业项目。
+
+也就是在 AI Agent 的帮助下，学会构建真正可用的 Agent 产品。
