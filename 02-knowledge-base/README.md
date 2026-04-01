@@ -1,6 +1,8 @@
-# 知识库总览
+﻿# 知识库总览
 
-本目录是整个课程的知识中台。每一个子目录代表一个核心主题领域。
+这个目录是整套课程的知识中台。它不是按“阶段”组织，而是按“主题领域”组织，适合在学习中横向查阅和回补知识。
+
+## 知识库结构
 
 - [01-agent-foundations/README.md](X:/AI%20work/LangChain%20Tutorial/02-knowledge-base/01-agent-foundations/README.md)
 - [02-langchain/README.md](X:/AI%20work/LangChain%20Tutorial/02-knowledge-base/02-langchain/README.md)
@@ -19,3 +21,9 @@
 5. Cross-cutting Systems
 6. Frontend Agent Experience
 7. Agent Framework Landscape
+
+## 怎么用这部分
+
+- 阶段学习时，把它当“回查资料库”。
+- 做项目时，把它当“专题知识支撑库”。
+- 做课后项目时，如果你发现某个概念理解不稳，就回到对应主题目录补课。
