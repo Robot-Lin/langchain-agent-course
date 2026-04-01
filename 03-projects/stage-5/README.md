@@ -1,14 +1,21 @@
 ﻿# Stage 5 配套项目
 
-这个目录是 `Stage 5` 的项目入口，重点训练工程化接入、评测和治理能力。
+这个目录是 Stage 5 的项目入口，帮助学习者把本章知识点真正落到功能设计、代码结构和用户审核上。
 
 包含两类项目：
 
-- [跟学项目: 企业 Agent 后端架构](X:/AI%20work/LangChain%20Tutorial/03-projects/stage-5/guided-project-enterprise-agent-backend.md)
-- [课后项目: 多源支持 Agent](X:/AI%20work/LangChain%20Tutorial/03-projects/stage-5/homework-project-multi-source-support-agent.md)
+- [跟学项目: 企业 Agent 后端架构](./guided-project-enterprise-agent-backend.md)
+- [课后项目: 多源支持 Agent](./homework-project-multi-source-support-agent.md)
 
-## 建议顺序
+## 使用顺序
 
 1. 先完成跟学项目
-2. 再独立完成课后项目
-3. 最后让 Codex 按验收标准做评审
+2. 每一步都让 Codex 解释对应知识点和关键代码
+3. 再独立完成课后项目
+4. 最后按验收标准做代码理解与审核
+
+## 这一阶段项目的额外要求
+
+- 每个项目都要能回答哪个功能由哪些文件或模块负责
+- 每个项目都要能回答关键逻辑是如何串起来的
+- 每个项目都不能跳过用户对代码的理解和审核

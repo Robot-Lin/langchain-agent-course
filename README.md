@@ -1,4 +1,4 @@
-﻿# LangChain Agent Course
+# LangChain Agent Course
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](./LICENSE)
 ![Course Stages](https://img.shields.io/badge/Stages-1--8-blue)
@@ -39,6 +39,7 @@
 - 说清 LangChain、LangGraph、Deep Agents 的分工与边界
 - 设计 Agent 的工具层、知识层、状态层、体验层、治理层和评测层
 - 在 AI Agent 协作下完成一个从后端到前端的 Agent 产品原型
+- 看懂 Agent 项目里的关键代码、关键文件和关键逻辑
 - 清楚解释自己的架构、交付路径、风险边界和下一步迭代方向
 
 ## Quick Start
@@ -91,6 +92,7 @@ Stage 8  Capstone Mastery      -> 完成毕业项目、答辩、复盘与迁移
 - 分阶段项目目录与 AI 项目教学协议
 - 全栈 Agent 学习路径、阶段放行标准与 Rubric
 - 仓库首页、课程总导航和高频入口校准
+- 课程主设计里已明确加入“代码理解与审核”要求
 
 当前仍然适合继续增强：
 
@@ -106,9 +108,10 @@ Stage 8  Capstone Mastery      -> 完成毕业项目、答辩、复盘与迁移
 1. 阅读知识
 2. 理解方法
 3. 跟做引导项目
-4. 独立完成课后项目
-5. 接受阶段考核
-6. 做复盘与迁移
+4. 阅读并解释关键代码
+5. 独立完成课后项目
+6. 接受阶段考核
+7. 做复盘与迁移
 
 查看：
 
@@ -124,6 +127,12 @@ Stage 8  Capstone Mastery      -> 完成毕业项目、答辩、复盘与迁移
   AI 先读知识文件，再读项目文件，按知识点顺序一步步带学
 - `Homework Project`
   只给需求与验收标准，不直接给完整答案，由学习者独立完成，再由 AI 做评审
+
+此外，所有项目都应训练一条额外主线：
+
+- 用户要能看懂不同功能分别由哪些文件和代码负责
+- 用户要能用自然语言解释关键实现逻辑
+- 用户要能对 AI 写出的代码做审核判断，而不是只接受结果
 
 查看：
 
@@ -157,4 +166,4 @@ Stage 8  Capstone Mastery      -> 完成毕业项目、答辩、复盘与迁移
 
 从问题判断，到系统设计，到框架选择，到工程化落地，到前端体验，再到全栈交付与毕业项目。
 
-也就是在 AI Agent 的帮助下，学会构建真正可用的 Agent 产品。
+也就是在 AI Agent 的帮助下，学会构建真正可用的 Agent 产品，并且看得懂它是如何被实现出来的。

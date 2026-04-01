@@ -1,99 +1,49 @@
 ﻿# 04 Guided Project
 
-本章引导项目选择 `全栈研究控制台交付版`。它把前端、后端、Agent runtime、流式链路、评测和交付收成一个完整产品。
+本章的引导项目是 全栈研究控制台交付版。这一章的重点不是把项目做得最大，而是把本章知识点真实落到功能、文件、代码和审核判断上。
 
 ## 项目目标
 
-设计一个全栈 Agent 产品。它需要支持用户在前端发起研究任务，通过后端和 Agent runtime 执行任务，流式返回状态和结果，并具备 deployment、observability 和 evaluation 思路。
+把前端、后端、Agent runtime、观测和部署打成一条真实可交付的产品链路。
 
-## 为什么这个项目适合 Stage 7
+## 对应知识点
 
-因为它同时具备：
+Agent Server、deployment、streaming integration、observability、evaluation、framework selection
 
-- 真实用户入口
-- 前后端链路
-- Agent runtime
-- streaming integration
-- 观测与评测闭环
-- 产品交付与迭代空间
+## 知识点如何落到代码上
 
-这正好覆盖 Stage 7 的核心能力。
+重点映射到这些实现层：
 
-## 项目最终交付物
+- frontend request flow、backend routes、agent runtime entry、streaming transport、trace hooks、deploy config
+- 主路径输入如何进入系统
+- 关键状态、关键判断或关键输出在哪里形成
 
-完成这个项目时，至少要交付：
+## 推荐推进顺序
 
-- 一张全栈系统图
-- 一份前后端与 runtime 链路说明
-- 一份 deployment 与运行方案
-- 一份 observability 与 evaluation 方案
-- 一份框架选型与取舍说明
+1. 先画全栈主路径
+2. 再拆前端、后端、runtime 与观测层职责
+3. 补部署与环境边界
+4. 整理失败路径和恢复策略
+5. 最后沿调用链逐段读代码
 
-## Step 1: 画完整链路
+## 本章必须完成的代码导读
 
-至少包括：
+做完项目设计或实现后，至少补做下面这轮读码：
 
-- 前端
-- 请求入口
-- Agent Server / runtime
-- 工具与知识层
-- 观测与评测层
+- 先列出关键文件或关键模块
+- 再说清它们各自负责什么
+- 再解释一条主路径如何从输入走到输出
+- 最后指出如果你来审核，会优先看哪 2 到 3 个风险点
 
-这一阶段先看链路是否闭环，不急着抠实现细节。
+## 最终交付物
 
-## Step 2: 设计前后端流式链路
+- 全栈主路径说明、部署方案、观测方案、关键调用链讲解
+- 一份主路径解释
+- 一份用户审核要点清单
 
-明确：
+## 推荐给 Codex 的说法
 
-- 用户如何接收实时状态
-- 前端如何承接中断与审批
-- Agent 运行中的反馈如何回到产品界面
+- 请沿着一次真实请求，把前端、后端、runtime 和 trace 入口都带我读一遍。
+- 不要只告诉我结果，先告诉我每个知识点落到了哪些文件和逻辑上。
+- 如果我讲不清楚代码逻辑，不要直接进入下一步。
 
-## Step 3: 设计交付与运行方案
-
-明确：
-
-- 系统如何运行
-- 如何部署
-- 如何追踪和排障
-- 如何做版本迭代
-
-## Step 4: 设计评测与验收
-
-明确：
-
-- 哪些指标决定这一版可以交付
-- 如何判断产品是否稳定可用
-- 如何在上线后继续评估表现
-
-## Step 5: 写选型说明
-
-明确：
-
-- 为什么这里用当前主线框架
-- 为什么不用更轻或更重的替代方案
-- 未来如果规模变化，架构如何调整
-
-## Step 6: 复盘为什么这已经是产品交付而不只是项目设计
-
-项目做完后，必须回答：
-
-- 哪些部分让它从“工程方案”变成“可交付产品”
-- 哪些部分还只是原型层
-- 下一版要优先补什么
-
-## Codex 在这个项目里怎么配合
-
-你可以让 Codex：
-
-- 检查系统链路是否缺层
-- 检查 deployment、observability、evaluation 是否只是口号
-- 检查前端与运行时之间的反馈链路是否闭环
-- 检查选型说明是否真的有取舍逻辑
-
-但不要让 Codex 直接替你输出最终交付稿。你真正要练的是交付判断。
-
-## 配套项目入口
-
-- [Stage 7 跟学项目](X:/AI%20work/LangChain%20Tutorial/03-projects/stage-7/guided-project-fullstack-research-console.md)
-- [Stage 7 课后项目](X:/AI%20work/LangChain%20Tutorial/03-projects/stage-7/homework-project-agent-product-delivery.md)

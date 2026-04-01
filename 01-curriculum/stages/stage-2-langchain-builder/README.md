@@ -1,18 +1,19 @@
 ﻿# Stage 2 教学包
 
-`Stage 2` 是整套课程第一次真正进入框架实践的阶段。它承接 `Stage 1` 的系统判断，把学习者从“知道一个 Agent 该怎么想”推进到“知道一个高层 Agent 原型该怎么搭”。
+这是 Stage 2 的课程入口。这一章的核心目标是：把系统判断推进成一个高层 LangChain 原型，并开始真正读懂 Agent 代码骨架。
 
-这一阶段聚焦的不是复杂编排，而是如何借助 `LangChain` 的高层抽象，更快、更稳地把一个合理的 Agent 设计推进成可演示、可验证、可迭代的原型。
+## 学完这一章之后应该做到什么
 
-## 这一阶段的目标
+- 覆盖并理解这一章的核心能力：tools、structured output、middleware、short-term memory、human-in-the-loop、LangChain 边界
+- 不只会描述架构，还能把知识点和实现方式连接起来
+- 看懂这一章里最关键的一类代码或伪代码结构
+- 在 AI 帮助下完成原型或方案后，能自己做审核判断
 
-完成这一阶段后，学习者应该能做到:
+## 这一章要重点看懂什么代码
 
-- 理解 `LangChain` 在新版架构中的位置
-- 用 `LangChain` 设计一个高层 Agent 原型
-- 说清 `tools`、`structured output`、`middleware`、`short-term memory`、`human-in-the-loop` 在高层 Agent 中分别解决什么问题
-- 判断哪些需求继续留在 `LangChain` 高层就够了
-- 判断什么时候一个项目已经开始逼近 `LangGraph` 的边界
+- 重点看懂 agent 装配方式、tool 包装、schema 定义、middleware 钩子和基础上下文管理。
+- 用户至少要能指出哪个文件、模块或函数在负责哪个功能
+- 用户至少要能讲清一条主路径是如何从输入走到输出的
 
 ## 建议学习顺序
 
@@ -25,35 +26,21 @@
 7. [05-challenges.md](./05-challenges.md)
 8. [06-review-checklist.md](./06-review-checklist.md)
 9. [07-codex-workshop.md](./07-codex-workshop.md)
-10. [Stage 2 配套项目](../../../03-projects/stage-2/README.md)
+10. [配套项目目录](../../../03-projects/stage-2/README.md)
 
-## 本阶段最核心的 6 个问题
+## 这一章的代码学习要求
 
-- `LangChain` 在新版体系里到底帮我们抽象了什么
-- 什么叫“高层 Agent 原型”
-- 为什么 `structured output` 在这一阶段特别重要
-- 为什么 `middleware` 能把控制逻辑从 prompt 里剥出来
-- `short-term memory` 在高层原型里什么时候值得接入
-- 什么情况下继续留在 `LangChain` 是合理的，什么情况下应该准备转向 `LangGraph`
+- 先说清知识点，再看知识点如何落到代码上
+- 看代码时优先看主路径，不急着把所有细节一次看完
+- 每完成一个小节，都要能用自然语言解释新增逻辑
+- 不把 AI 已经写好了误当成自己已经掌握了
 
-## 这一阶段的学习产物
+## 对项目学习的要求
 
-学完以后，学习者手里应该至少有这些可见产物:
+- 用户应能解释哪段代码在调工具、哪段代码在约束输出、哪段逻辑在做澄清或审核。
+- 跟学项目里要做代码导读，课后项目里要做代码审核
+- 最终不仅要交出结果，还要交出我看懂了什么代码的说明
 
-- 一份 LangChain 高层 Agent 原型说明
-- 一份最小工具清单
-- 一份 structured output 设计草案
-- 一份 middleware / 控制逻辑说明
-- 一份“为什么现在还适合留在 LangChain”的边界说明
+## 本章在整套课程里的作用
 
-## 对后续阶段的作用
-
-这一章训练的不是“会不会调用 API”，而是后面进入 `LangGraph` 之前必须具备的高层工程意识:
-
-- 组件化思维
-- 高层原型设计能力
-- 输出结构意识
-- 工具边界意识
-- 从原型到系统的升级判断能力
-
-如果你准备正式开始学习，优先打开 [01-overview.md](./01-overview.md)；如果你准备按节奏带学，优先打开 [08-session-roadmap.md](./08-session-roadmap.md)。
+能产出高层原型说明、输出 schema、最小工具清单，以及对原型代码主路径的口头讲解。

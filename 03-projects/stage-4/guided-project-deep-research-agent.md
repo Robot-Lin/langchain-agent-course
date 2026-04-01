@@ -1,118 +1,57 @@
-# 跟学项目: 深度研究 Agent
+﻿# 跟学项目: 深度研究 Agent
 
 ## 所属阶段
-
 Stage 4: Deep Agents
 
 ## 项目目标
 
-设计一个复杂任务型 Deep Agent。它需要接收研究主题，规划研究路线，拆出多个子任务角色，分层组织上下文，并在关键阶段汇总结果和请求人工修正方向。
+设计一个深度研究 Agent，能围绕复杂问题拆解任务、分配子任务、整合结果并保留人工检查点。
 
 ## 对应知识点
 
-- 复杂目标拆解
-- Context engineering
-- Subagents
-- 复杂任务治理
-- Human-in-the-loop
+Deep Agents 定位、planning、context engineering、subagents、复杂任务 human-in-the-loop
 
-对应阅读:
+对应阅读：
 
-- [Stage 4 Overview](X:/AI%20work/LangChain%20Tutorial/01-curriculum/stages/stage-4-deep-agents/01-overview.md)
-- [Stage 4 Concepts](X:/AI%20work/LangChain%20Tutorial/01-curriculum/stages/stage-4-deep-agents/02-concepts.md)
-- [Stage 4 Methods](X:/AI%20work/LangChain%20Tutorial/01-curriculum/stages/stage-4-deep-agents/03-methods.md)
+- [阶段概览](../../01-curriculum/stages/stage-4-deep-agents/01-overview.md)
+- [阶段概念](../../01-curriculum/stages/stage-4-deep-agents/02-concepts.md)
+- [阶段方法](../../01-curriculum/stages/stage-4-deep-agents/03-methods.md)
+- [阶段案例对照](../../01-curriculum/stages/stage-4-deep-agents/09-case-comparisons.md)
 
-## 最终产出
+## 最终交付物
 
-- 一份复杂目标拆解图
-- 一份 context 分层说明
-- 一份子代理角色说明
-- 一份治理点与审批点清单
-- 一份为什么更适合 Deep Agents 的说明
+- 一份项目目标与边界说明
+- 一份知识点到功能的映射表
+- 一份功能到文件或模块的映射表
+- 一份关键逻辑解释
+- 一份用户审核清单
 
-## AI 带学步骤
+## 这份项目要重点看懂什么代码
 
-### Step 1: 定义复杂总目标
+- planner 模块、子任务分发器、subagent 接口、context assembly、人工复核逻辑
+- 哪段逻辑在处理输入
+- 哪段逻辑在处理状态、工具、检索、审批或展示
+- 哪段逻辑在决定系统下一步怎么走
 
-要做什么:
+## 推荐带学步骤
 
-- 明确最终研究结果是什么
+1. 先用自然语言说清这个项目解决什么问题，不急着写代码。
+2. 把本项目对应的知识点逐条列出来，并说明它们会落到哪些功能上。
+3. 再让 Codex 带你把功能映射到文件、模块、函数、节点或组件。
+4. 每做完一步，都要求 Codex 解释新增代码分别实现了什么。
+5. 在进入下一步前，先由你自己复述这一小步的代码逻辑。
+6. 最后再整理成一条完整主路径，说明输入如何一步步变成输出。
 
-为什么先做:
+## 推荐给 Codex 的说法
 
-- 复杂任务最容易从目标层就发散
-
-知识点关联:
-
-- 复杂目标拆解法
-
-### Step 2: 拆阶段目标
-
-要做什么:
-
-- 将总目标拆成研究阶段
-
-为什么先做:
-
-- 不拆阶段，后续角色和上下文会全部混在一起
-
-知识点关联:
-
-- 复杂目标拆解法
-
-### Step 3: 设计 context 分层
-
-要做什么:
-
-- 区分长期资料、当前状态和子任务上下文
-
-为什么先做:
-
-- context engineering 是这一阶段核心
-
-知识点关联:
-
-- Context 分层法
-
-### Step 4: 设计子代理角色
-
-要做什么:
-
-- 为收集、分析、汇总等任务定义角色
-
-为什么先做:
-
-- 子代理只有真正降低复杂度时才有价值
-
-知识点关联:
-
-- Subagent 必要性判断法
-
-### Step 5: 设计治理点
-
-要做什么:
-
-- 识别偏航、审批和质量检查点
-
-为什么先做:
-
-- 复杂任务最怕慢慢跑偏
-
-知识点关联:
-
-- 复杂任务治理法
+- 先根据这一阶段的知识文件带我做项目，不要一上来直接给完整实现。
+- 每一步先解释知识点，再解释这些知识点会落到哪些代码上。
+- 每一步结束后，带我做一次代码导读，告诉我哪个功能对应哪个文件或函数。
+- 如果我没讲清楚代码逻辑，不要直接进入下一步。
 
 ## 阶段检查点
 
-- 能说清总目标和阶段目标
-- 能说明 context 分层
-- 能解释为什么需要这些子代理
-- 能写出治理点与审批点
-
-## 与 Codex 的配合方式
-
-推荐对 Codex 说:
-
-- 先根据 Stage 4 的概念文件，带我一步步完成这个 Deep Agent 设计
-- 每一步先解释对应知识点，再帮我检查复杂任务拆解
-- 不要一开始就给我完整方案，先让我自己拆，再帮我修正
+- 能说清这个项目的主任务和边界
+- 能指出至少 3 个关键文件、模块或逻辑块
+- 能解释至少 2 段关键实现逻辑
+- 能说明如果要审核这份代码，自己会重点看哪里

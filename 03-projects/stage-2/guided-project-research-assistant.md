@@ -1,119 +1,57 @@
-# 跟学项目: 单工具研究助理
+﻿# 跟学项目: 单工具研究助理
 
 ## 所属阶段
-
 Stage 2: LangChain Builder
 
 ## 项目目标
 
-设计一个 LangChain 高层 Agent 原型。它能够接收一个研究问题，调用单一查询工具收集信息，并输出结构化研究摘要。
+设计一个单工具研究助理，接收研究问题，调用一个查询工具，并输出结构化研究摘要。
 
 ## 对应知识点
 
-- LangChain 的高层定位
-- 工具最小化
-- Structured output
-- Middleware 思维
-- 高层人工审核意识
+LangChain 在新版架构中的位置、tool 最小化、structured output、middleware、高层 human-in-the-loop
 
-对应阅读:
+对应阅读：
 
-- [Stage 2 Overview](X:/AI%20work/LangChain%20Tutorial/01-curriculum/stages/stage-2-langchain-builder/01-overview.md)
-- [Stage 2 Concepts](X:/AI%20work/LangChain%20Tutorial/01-curriculum/stages/stage-2-langchain-builder/02-concepts.md)
-- [Stage 2 Methods](X:/AI%20work/LangChain%20Tutorial/01-curriculum/stages/stage-2-langchain-builder/03-methods.md)
+- [阶段概览](../../01-curriculum/stages/stage-2-langchain-builder/01-overview.md)
+- [阶段概念](../../01-curriculum/stages/stage-2-langchain-builder/02-concepts.md)
+- [阶段方法](../../01-curriculum/stages/stage-2-langchain-builder/03-methods.md)
+- [阶段案例对照](../../01-curriculum/stages/stage-2-langchain-builder/09-case-comparisons.md)
 
-## 最终产出
+## 最终交付物
 
-- 一份 LangChain 原型说明
-- 一份工具定义
-- 一份结构化输出设计
-- 一份控制逻辑说明
-- 一份高层边界复盘
+- 一份项目目标与边界说明
+- 一份知识点到功能的映射表
+- 一份功能到文件或模块的映射表
+- 一份关键逻辑解释
+- 一份用户审核清单
 
-## AI 带学步骤
+## 这份项目要重点看懂什么代码
 
-### Step 1: 明确唯一主任务
+- agent 入口函数、tool 定义、structured output schema、middleware 决策点、问题澄清逻辑
+- 哪段逻辑在处理输入
+- 哪段逻辑在处理状态、工具、检索、审批或展示
+- 哪段逻辑在决定系统下一步怎么走
 
-要做什么:
+## 推荐带学步骤
 
-- 确定这个原型只做一件事: 回答研究问题并输出摘要
+1. 先用自然语言说清这个项目解决什么问题，不急着写代码。
+2. 把本项目对应的知识点逐条列出来，并说明它们会落到哪些功能上。
+3. 再让 Codex 带你把功能映射到文件、模块、函数、节点或组件。
+4. 每做完一步，都要求 Codex 解释新增代码分别实现了什么。
+5. 在进入下一步前，先由你自己复述这一小步的代码逻辑。
+6. 最后再整理成一条完整主路径，说明输入如何一步步变成输出。
 
-为什么先做:
+## 推荐给 Codex 的说法
 
-- 高层原型最怕一开始就变成“什么都想做”
-
-知识点关联:
-
-- 高层原型四步法
-
-### Step 2: 只保留一个工具
-
-要做什么:
-
-- 选择一个最必要的查询工具
-
-为什么先做:
-
-- 先验证主路径，不让工具复杂度喧宾夺主
-
-知识点关联:
-
-- 工具最小化
-
-### Step 3: 设计 structured output
-
-要做什么:
-
-- 定义摘要的字段和用途
-
-为什么先做:
-
-- 没有结构化输出，结果很难复用和评估
-
-知识点关联:
-
-- 先设计输出，再设计提示词
-
-### Step 4: 设计基础控制逻辑
-
-要做什么:
-
-- 判断何时先追问，何时直接查询，何时输出结果
-
-为什么先做:
-
-- 高层 Agent 也需要最基本的流程控制
-
-知识点关联:
-
-- Middleware 外挂法
-
-### Step 5: 做高层边界复盘
-
-要做什么:
-
-- 判断当前方案为什么还适合 LangChain
-- 判断未来在哪些地方会逼近 LangGraph
-
-为什么先做:
-
-- 让学习者尽早感知框架边界
-
-知识点关联:
-
-- 何时停止留在 LangChain
+- 先根据这一阶段的知识文件带我做项目，不要一上来直接给完整实现。
+- 每一步先解释知识点，再解释这些知识点会落到哪些代码上。
+- 每一步结束后，带我做一次代码导读，告诉我哪个功能对应哪个文件或函数。
+- 如果我没讲清楚代码逻辑，不要直接进入下一步。
 
 ## 阶段检查点
 
-- 能说清唯一主任务
-- 能解释为什么只保留一个工具
-- 能给出结构化输出字段
-- 能说明控制逻辑和边界
-
-## 与 Codex 的配合方式
-
-推荐对 Codex 说:
-
-- 先根据 Stage 2 的概念文件，带我一步步完成这个 LangChain 研究助理
-- 每一步先解释对应知识点，再推进设计
-- 不要一次给我最终实现，先让我自己做选择，再帮我纠偏
+- 能说清这个项目的主任务和边界
+- 能指出至少 3 个关键文件、模块或逻辑块
+- 能解释至少 2 段关键实现逻辑
+- 能说明如果要审核这份代码，自己会重点看哪里

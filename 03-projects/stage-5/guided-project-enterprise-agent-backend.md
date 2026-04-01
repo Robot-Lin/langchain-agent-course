@@ -1,119 +1,57 @@
-# 跟学项目: 企业 Agent 后端架构
+﻿# 跟学项目: 企业 Agent 后端架构
 
 ## 所属阶段
-
 Stage 5: Agent Engineering
 
 ## 项目目标
 
-设计一个工程化 Agent 后端架构。它需要能检索企业知识、接入 MCP 或工具能力访问外部系统、读写业务数据，并通过 observability、evaluation 和治理机制保持可控。
+设计一个企业 Agent 后端架构，连接工具、知识库、数据库、API 和观测体系。
 
 ## 对应知识点
 
-- MCP 接入
-- RAG
-- Memory / DB / API 分层
-- Observability
-- Evaluation
-- 权限治理
+MCP、RAG、memory、database、backend API、observability、evaluation、governance
 
-对应阅读:
+对应阅读：
 
-- [Stage 5 Overview](X:/AI%20work/LangChain%20Tutorial/01-curriculum/stages/stage-5-agent-engineering/01-overview.md)
-- [Stage 5 Concepts](X:/AI%20work/LangChain%20Tutorial/01-curriculum/stages/stage-5-agent-engineering/02-concepts.md)
-- [Stage 5 Methods](X:/AI%20work/LangChain%20Tutorial/01-curriculum/stages/stage-5-agent-engineering/03-methods.md)
+- [阶段概览](../../01-curriculum/stages/stage-5-agent-engineering/01-overview.md)
+- [阶段概念](../../01-curriculum/stages/stage-5-agent-engineering/02-concepts.md)
+- [阶段方法](../../01-curriculum/stages/stage-5-agent-engineering/03-methods.md)
+- [阶段案例对照](../../01-curriculum/stages/stage-5-agent-engineering/09-case-comparisons.md)
 
-## 最终产出
+## 最终交付物
 
-- 一张分层架构图
-- 一份知识层与工具层说明
-- 一份数据层与 API 说明
-- 一份指标与追踪方案
-- 一份权限治理清单
+- 一份项目目标与边界说明
+- 一份知识点到功能的映射表
+- 一份功能到文件或模块的映射表
+- 一份关键逻辑解释
+- 一份用户审核清单
 
-## AI 带学步骤
+## 这份项目要重点看懂什么代码
 
-### Step 1: 画工程分层
+- tool adapter、retriever、memory store、API handlers、trace hooks、evaluation pipeline
+- 哪段逻辑在处理输入
+- 哪段逻辑在处理状态、工具、检索、审批或展示
+- 哪段逻辑在决定系统下一步怎么走
 
-要做什么:
+## 推荐带学步骤
 
-- 先把 Agent、MCP、RAG、数据、API、观测、治理分层画出来
+1. 先用自然语言说清这个项目解决什么问题，不急着写代码。
+2. 把本项目对应的知识点逐条列出来，并说明它们会落到哪些功能上。
+3. 再让 Codex 带你把功能映射到文件、模块、函数、节点或组件。
+4. 每做完一步，都要求 Codex 解释新增代码分别实现了什么。
+5. 在进入下一步前，先由你自己复述这一小步的代码逻辑。
+6. 最后再整理成一条完整主路径，说明输入如何一步步变成输出。
 
-为什么先做:
+## 推荐给 Codex 的说法
 
-- 没有分层，后续所有能力都会混在一起
-
-知识点关联:
-
-- 横向能力分层法
-
-### Step 2: 区分知识与数据
-
-要做什么:
-
-- 明确哪些是 memory，哪些是知识库，哪些是数据库
-
-为什么先做:
-
-- 这是工程边界的核心问题
-
-知识点关联:
-
-- 知识接入选择法
-
-### Step 3: 设计外部能力接入
-
-要做什么:
-
-- 明确什么走 MCP，什么走 API，什么需要权限控制
-
-为什么先做:
-
-- 外部接入能力是系统风险和价值都最高的部分之一
-
-知识点关联:
-
-- 先画边界，再接能力
-
-### Step 4: 设计观测与评测
-
-要做什么:
-
-- 写出要追踪的步骤和要衡量的指标
-
-为什么先做:
-
-- 没有追踪和指标，系统无法持续迭代
-
-知识点关联:
-
-- 观测与评测前置法
-
-### Step 5: 设计治理清单
-
-要做什么:
-
-- 为每个外部能力写权限和审批规则
-
-为什么先做:
-
-- 真正的企业系统不能只看功能，不看风险
-
-知识点关联:
-
-- 权限治理清单法
+- 先根据这一阶段的知识文件带我做项目，不要一上来直接给完整实现。
+- 每一步先解释知识点，再解释这些知识点会落到哪些代码上。
+- 每一步结束后，带我做一次代码导读，告诉我哪个功能对应哪个文件或函数。
+- 如果我没讲清楚代码逻辑，不要直接进入下一步。
 
 ## 阶段检查点
 
-- 能说清分层结构
-- 能区分知识和数据边界
-- 能说明 MCP 和 API 的角色
-- 能写出观测与治理方案
-
-## 与 Codex 的配合方式
-
-推荐对 Codex 说:
-
-- 先根据 Stage 5 的概念文件，带我一步步完成这个工程化 Agent 架构
-- 每一步先解释对应知识点，再帮我检查分层是否清楚
-- 不要一开始就给完整架构，先让我自己分层，再帮我修正
+- 能说清这个项目的主任务和边界
+- 能指出至少 3 个关键文件、模块或逻辑块
+- 能解释至少 2 段关键实现逻辑
+- 能说明如果要审核这份代码，自己会重点看哪里

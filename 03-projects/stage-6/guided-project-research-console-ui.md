@@ -1,118 +1,57 @@
-# 跟学项目: 研究控制台前端
+﻿# 跟学项目: 研究控制台前端
 
 ## 所属阶段
-
 Stage 6: Agent Frontend
 
 ## 项目目标
 
-设计一个研究 Agent 控制台前端。它需要支持用户发起任务、看到计划与执行状态、接收 streaming 更新、审批关键动作，并查看结构化研究结果。
+设计一个研究控制台前端，支持流式输出、结构化结果展示、审批操作和状态可视化。
 
 ## 对应知识点
 
-- Agent UX
-- 界面分区
-- Streaming 反馈
-- Structured output 展示
-- 审批交互
+Agent UX、streaming、structured output rendering、human-in-the-loop UI、history 与 source visibility
 
-对应阅读:
+对应阅读：
 
-- [Stage 6 Overview](X:/AI%20work/LangChain%20Tutorial/01-curriculum/stages/stage-6-agent-frontend/01-overview.md)
-- [Stage 6 Concepts](X:/AI%20work/LangChain%20Tutorial/01-curriculum/stages/stage-6-agent-frontend/02-concepts.md)
-- [Stage 6 Methods](X:/AI%20work/LangChain%20Tutorial/01-curriculum/stages/stage-6-agent-frontend/03-methods.md)
+- [阶段概览](../../01-curriculum/stages/stage-6-agent-frontend/01-overview.md)
+- [阶段概念](../../01-curriculum/stages/stage-6-agent-frontend/02-concepts.md)
+- [阶段方法](../../01-curriculum/stages/stage-6-agent-frontend/03-methods.md)
+- [阶段案例对照](../../01-curriculum/stages/stage-6-agent-frontend/09-case-comparisons.md)
 
-## 最终产出
+## 最终交付物
 
-- 一张前端结构图
-- 一份任务旅程说明
-- 一份状态和审批交互说明
-- 一份结果展示结构说明
-- 一份为什么这不是普通聊天框的说明
+- 一份项目目标与边界说明
+- 一份知识点到功能的映射表
+- 一份功能到文件或模块的映射表
+- 一份关键逻辑解释
+- 一份用户审核清单
 
-## AI 带学步骤
+## 这份项目要重点看懂什么代码
 
-### Step 1: 画任务旅程
+- chat shell、stream renderer、approval modal、result cards、state timeline、source panel
+- 哪段逻辑在处理输入
+- 哪段逻辑在处理状态、工具、检索、审批或展示
+- 哪段逻辑在决定系统下一步怎么走
 
-要做什么:
+## 推荐带学步骤
 
-- 定义用户从发起任务到查看结果的全过程
+1. 先用自然语言说清这个项目解决什么问题，不急着写代码。
+2. 把本项目对应的知识点逐条列出来，并说明它们会落到哪些功能上。
+3. 再让 Codex 带你把功能映射到文件、模块、函数、节点或组件。
+4. 每做完一步，都要求 Codex 解释新增代码分别实现了什么。
+5. 在进入下一步前，先由你自己复述这一小步的代码逻辑。
+6. 最后再整理成一条完整主路径，说明输入如何一步步变成输出。
 
-为什么先做:
+## 推荐给 Codex 的说法
 
-- 没有任务旅程，界面会变成组件堆砌
-
-知识点关联:
-
-- 任务旅程设计法
-
-### Step 2: 设计界面分区
-
-要做什么:
-
-- 把输入、计划、状态、审批和结果分开
-
-为什么先做:
-
-- Agent 信息类型比普通 chat 多得多
-
-知识点关联:
-
-- Agent 界面分区法
-
-### Step 3: 设计 streaming 与状态反馈
-
-要做什么:
-
-- 明确哪些信息实时出现
-
-为什么先做:
-
-- 长任务必须让用户始终有反馈
-
-知识点关联:
-
-- 流式反馈设计法
-
-### Step 4: 设计审批和可控性交互
-
-要做什么:
-
-- 定义审批前后用户能做什么
-
-为什么先做:
-
-- Agent 的可控性主要通过交互体现
-
-知识点关联:
-
-- 可控性设计法
-
-### Step 5: 设计结果结构化展示
-
-要做什么:
-
-- 将结果分成摘要、依据、不确定点和下一步
-
-为什么先做:
-
-- 复杂结果不该只塞进对话气泡
-
-知识点关联:
-
-- 结果结构化展示法
+- 先根据这一阶段的知识文件带我做项目，不要一上来直接给完整实现。
+- 每一步先解释知识点，再解释这些知识点会落到哪些代码上。
+- 每一步结束后，带我做一次代码导读，告诉我哪个功能对应哪个文件或函数。
+- 如果我没讲清楚代码逻辑，不要直接进入下一步。
 
 ## 阶段检查点
 
-- 能说清任务旅程
-- 能说明界面分区
-- 能解释 streaming 和审批设计
-- 能说明为什么这样展示结果
-
-## 与 Codex 的配合方式
-
-推荐对 Codex 说:
-
-- 先根据 Stage 6 的概念文件，带我一步步完成这个 Agent 前端控制台
-- 每一步先解释对应知识点，再帮我检查前端结构
-- 不要一开始就给最终界面，先让我自己画分区，再帮我修正
+- 能说清这个项目的主任务和边界
+- 能指出至少 3 个关键文件、模块或逻辑块
+- 能解释至少 2 段关键实现逻辑
+- 能说明如果要审核这份代码，自己会重点看哪里

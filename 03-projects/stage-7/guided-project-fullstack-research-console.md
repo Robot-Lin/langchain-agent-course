@@ -1,119 +1,57 @@
-# 跟学项目: 全栈研究控制台交付版
+﻿# 跟学项目: 全栈研究控制台交付版
 
 ## 所属阶段
-
-Stage 7: Full-stack Delivery
+Stage 7: Fullstack Delivery
 
 ## 项目目标
 
-设计一个可交付的全栈 Agent 产品。它需要支持前端发起研究任务，后端通过 Agent runtime 执行任务，流式返回状态和结果，并具备部署、追踪和评测方案。
+设计一个全栈研究控制台交付版，包含前端、Agent Server、流式交互、部署与观测。
 
 ## 对应知识点
 
-- 全链路组装
-- Agent Server
-- Streaming integration
-- Deployment
-- Observability / Evaluation
-- 交付与选型说明
+full-stack delivery、Agent Server、deployment、streaming integration、observability、evaluation
 
-对应阅读:
+对应阅读：
 
-- [Stage 7 Overview](X:/AI%20work/LangChain%20Tutorial/01-curriculum/stages/stage-7-fullstack-delivery/01-overview.md)
-- [Stage 7 Concepts](X:/AI%20work/LangChain%20Tutorial/01-curriculum/stages/stage-7-fullstack-delivery/02-concepts.md)
-- [Stage 7 Methods](X:/AI%20work/LangChain%20Tutorial/01-curriculum/stages/stage-7-fullstack-delivery/03-methods.md)
+- [阶段概览](../../01-curriculum/stages/stage-7-fullstack-delivery/01-overview.md)
+- [阶段概念](../../01-curriculum/stages/stage-7-fullstack-delivery/02-concepts.md)
+- [阶段方法](../../01-curriculum/stages/stage-7-fullstack-delivery/03-methods.md)
+- [阶段案例对照](../../01-curriculum/stages/stage-7-fullstack-delivery/09-case-comparisons.md)
 
-## 最终产出
+## 最终交付物
 
-- 一张全链路系统图
-- 一份前后端与 runtime 链路说明
-- 一份部署和追踪方案
-- 一份评测与验收说明
-- 一份选型说明
+- 一份项目目标与边界说明
+- 一份知识点到功能的映射表
+- 一份功能到文件或模块的映射表
+- 一份关键逻辑解释
+- 一份用户审核清单
 
-## AI 带学步骤
+## 这份项目要重点看懂什么代码
 
-### Step 1: 画全链路
+- frontend request flow、backend routes、agent runtime entry、streaming transport、trace 与 eval hooks、deploy config
+- 哪段逻辑在处理输入
+- 哪段逻辑在处理状态、工具、检索、审批或展示
+- 哪段逻辑在决定系统下一步怎么走
 
-要做什么:
+## 推荐带学步骤
 
-- 从用户入口一直画到 runtime、数据层和结果回流
+1. 先用自然语言说清这个项目解决什么问题，不急着写代码。
+2. 把本项目对应的知识点逐条列出来，并说明它们会落到哪些功能上。
+3. 再让 Codex 带你把功能映射到文件、模块、函数、节点或组件。
+4. 每做完一步，都要求 Codex 解释新增代码分别实现了什么。
+5. 在进入下一步前，先由你自己复述这一小步的代码逻辑。
+6. 最后再整理成一条完整主路径，说明输入如何一步步变成输出。
 
-为什么先做:
+## 推荐给 Codex 的说法
 
-- 全栈交付先看链路闭不闭合
-
-知识点关联:
-
-- 全链路组装法
-
-### Step 2: 设计流式与 Agent Server 链路
-
-要做什么:
-
-- 说明前端如何实时接收状态与结果
-
-为什么先做:
-
-- 全栈 Agent 的体验和运行时必须连起来
-
-知识点关联:
-
-- 全链路组装法
-
-### Step 3: 设计部署与运行
-
-要做什么:
-
-- 说明系统如何运行、如何对外提供服务、如何定位问题
-
-为什么先做:
-
-- 交付不能停在结构图层面
-
-知识点关联:
-
-- 部署前置思维
-
-### Step 4: 设计评测与验收
-
-要做什么:
-
-- 写出交付版的核心验收指标
-
-为什么先做:
-
-- 没有验收，就没有交付标准
-
-知识点关联:
-
-- 交付三问法
-
-### Step 5: 写选型说明
-
-要做什么:
-
-- 说明为什么这套交付链路合理
-
-为什么先做:
-
-- 交付是有取舍的，不是堆配置
-
-知识点关联:
-
-- 选型说明法
+- 先根据这一阶段的知识文件带我做项目，不要一上来直接给完整实现。
+- 每一步先解释知识点，再解释这些知识点会落到哪些代码上。
+- 每一步结束后，带我做一次代码导读，告诉我哪个功能对应哪个文件或函数。
+- 如果我没讲清楚代码逻辑，不要直接进入下一步。
 
 ## 阶段检查点
 
-- 能说清全链路
-- 能解释 Agent Server 位置
-- 能说明如何部署和追踪
-- 能给出交付验收指标
-
-## 与 Codex 的配合方式
-
-推荐对 Codex 说:
-
-- 先根据 Stage 7 的概念文件，带我一步步完成这个全栈 Agent 交付方案
-- 每一步先解释对应知识点，再帮我检查交付链路
-- 不要一开始就给最终交付图，先让我自己画，再帮我修正
+- 能说清这个项目的主任务和边界
+- 能指出至少 3 个关键文件、模块或逻辑块
+- 能解释至少 2 段关键实现逻辑
+- 能说明如果要审核这份代码，自己会重点看哪里

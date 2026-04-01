@@ -1,38 +1,46 @@
 ﻿# Stage 6 教学包
 
-这是课程里把 Agent 从“后端系统”推进到“真正可用的产品体验”的关键单元。它承接 Stage 5，把学习者带入 Agent UX、状态可视化、流式交互、审批界面、历史可见性和结构化结果展示。
+这是 Stage 6 的课程入口。这一章的核心目标是：把后端能力翻译成可见、可控、可审核的前端体验，并学会阅读前端交互代码。
 
 ## 学完这一章之后应该做到什么
 
-- 能解释 Agent UX 和普通聊天界面的根本差别。
-- 能设计适合 Agent 的流式反馈、状态展示和可审批交互。
-- 能让用户看见 Agent 正在做什么、将要做什么、哪里需要接管。
-- 能把复杂后端能力翻译成用户真正能理解和使用的前端体验。
+- 覆盖并理解这一章的核心能力：Agent UX、streaming、structured output rendering、human-in-the-loop UI、state visualization
+- 不只会描述架构，还能把知识点和实现方式连接起来
+- 看懂这一章里最关键的一类代码或伪代码结构
+- 在 AI 帮助下完成原型或方案后，能自己做审核判断
+
+## 这一章要重点看懂什么代码
+
+- 重点看懂消息流渲染、streaming 处理、审批弹窗、状态面板、来源展示和历史记录界面。
+- 用户至少要能指出哪个文件、模块或函数在负责哪个功能
+- 用户至少要能讲清一条主路径是如何从输入走到输出的
 
 ## 建议学习顺序
 
-1. [01-overview.md](X:/AI%20work/LangChain%20Tutorial/01-curriculum/stages/stage-6-agent-frontend/01-overview.md)
-2. [02-concepts.md](X:/AI%20work/LangChain%20Tutorial/01-curriculum/stages/stage-6-agent-frontend/02-concepts.md)
-3. [03-methods.md](X:/AI%20work/LangChain%20Tutorial/01-curriculum/stages/stage-6-agent-frontend/03-methods.md)
-4. [08-session-roadmap.md](X:/AI%20work/LangChain%20Tutorial/01-curriculum/stages/stage-6-agent-frontend/08-session-roadmap.md)
-5. [09-case-comparisons.md](X:/AI%20work/LangChain%20Tutorial/01-curriculum/stages/stage-6-agent-frontend/09-case-comparisons.md)
-6. [04-guided-project.md](X:/AI%20work/LangChain%20Tutorial/01-curriculum/stages/stage-6-agent-frontend/04-guided-project.md)
-7. [05-challenges.md](X:/AI%20work/LangChain%20Tutorial/01-curriculum/stages/stage-6-agent-frontend/05-challenges.md)
-8. [06-review-checklist.md](X:/AI%20work/LangChain%20Tutorial/01-curriculum/stages/stage-6-agent-frontend/06-review-checklist.md)
-9. [07-codex-workshop.md](X:/AI%20work/LangChain%20Tutorial/01-curriculum/stages/stage-6-agent-frontend/07-codex-workshop.md)
-10. [Stage 6 配套项目](X:/AI%20work/LangChain%20Tutorial/03-projects/stage-6/README.md)
+1. [01-overview.md](./01-overview.md)
+2. [02-concepts.md](./02-concepts.md)
+3. [09-case-comparisons.md](./09-case-comparisons.md)
+4. [03-methods.md](./03-methods.md)
+5. [08-session-roadmap.md](./08-session-roadmap.md)
+6. [04-guided-project.md](./04-guided-project.md)
+7. [05-challenges.md](./05-challenges.md)
+8. [06-review-checklist.md](./06-review-checklist.md)
+9. [07-codex-workshop.md](./07-codex-workshop.md)
+10. [配套项目目录](../../../03-projects/stage-6/README.md)
 
-## 本章的核心问题
+## 这一章的代码学习要求
 
-- 为什么 Agent 产品不能只放一个聊天框。
-- 为什么 streaming、structured output 和审批界面会直接影响可用性。
-- 为什么复杂任务必须有状态可视化、历史可见性和失败反馈。
-- 为什么前端是用户信任感、控制感和产品完成度的核心部分。
+- 先说清知识点，再看知识点如何落到代码上
+- 看代码时优先看主路径，不急着把所有细节一次看完
+- 每完成一个小节，都要能用自然语言解释新增逻辑
+- 不把 AI 已经写好了误当成自己已经掌握了
+
+## 对项目学习的要求
+
+- 用户应能解释哪段代码在展示过程、哪段代码在处理审批、哪段代码在组织状态可视化。
+- 跟学项目里要做代码导读，课后项目里要做代码审核
+- 最终不仅要交出结果，还要交出我看懂了什么代码的说明
 
 ## 本章在整套课程里的作用
 
-Stage 6 训练的是把系统能力变成体验能力：
-
-- 你不再只关心系统能做什么，也关心用户能否理解它在做什么。
-- 你开始为 Agent 设计接管点、解释层和反馈层。
-- 你开始具备把 Stage 5 后端系统做成真实产品的前端视角。
+能产出前端体验草图、状态展示规则、审批交互说明，并能读懂关键前端组件。
