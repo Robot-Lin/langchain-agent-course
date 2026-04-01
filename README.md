@@ -1,25 +1,26 @@
-# LangChain Agent Course
+﻿# LangChain Agent Course
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](./LICENSE)
 ![Course Stages](https://img.shields.io/badge/Stages-1--8-blue)
 ![Project Mode](https://img.shields.io/badge/Learning-Project--Based-orange)
 ![Agent Stack](https://img.shields.io/badge/Stack-LangChain%20%7C%20LangGraph%20%7C%20Deep%20Agents-black)
-![Build Status](https://img.shields.io/badge/Status-Teaching%20Packs%20Complete-success)
+![Build Status](https://img.shields.io/badge/Status-Code%20Reading%20Track%20Integrated-success)
 
 一个面向 IDE + Codex 协作学习的完整 Agent 教学课程，围绕 `LangChain`、`LangGraph`、`Deep Agents` 展开，并系统覆盖 `MCP`、`RAG`、`Memory`、数据库、后端 API、前端 Agent UX、评测、观测、部署与毕业项目。
 
-这不是一份单次写完的“教程文档”，而是一套可以持续扩建的课程工程。目标是让学习者不只是会“调用一个 Agent”，而是能在 AI Agent 的帮助下，从后端到前端构建一个功能完整、结构清晰、可评测、可迭代的 Agent 产品。
+这套课程的目标不是只让学习者“调通一个 Agent”，而是让学习者在 AI Agent 的帮助下，从后端到前端构建一个功能完整、结构清晰、可评测、可迭代的 Agent 产品，并且看得懂它是如何被实现出来的。
 
 ## Why This Repo Exists
 
-这套课程想解决的不是“如何快速跑一个 Demo”，而是下面这条完整学习链路：
+这套课程要解决的不是“如何快速跑一个 Demo”，而是下面这条完整学习链路：
 
 - 判断一个需求是否真的需要 Agent
 - 选择合适的框架层级
 - 搭建可工作的 Agent 系统
-- 补齐知识、工具、状态、评测和治理
+- 补齐工具、知识、状态、评测和治理
 - 做出真正可用的前端体验
 - 交付一个从后端到前端闭环的 Agent 产品
+- 学会看懂、解释和审核 AI 帮你写出来的代码
 
 ## Who This Course Is For
 
@@ -29,17 +30,18 @@
 - 有一定提示词构建能力
 - 能描述自己的需求、流程或产品想法
 - 想在 IDE 中和 Codex 结对学习，而不是只看文档
-- 希望最终做出一个真正可演示、可解释、可迭代的 Agent 项目
+- 希望最终做出一个可演示、可解释、可迭代的 Agent 项目
 
 ## What You Will Be Able To Do
 
-完成这套课程后，学习者应能：
+完成这套课程后，学习者应该能：
 
 - 判断一个问题是否真的需要 Agent
-- 说清 LangChain、LangGraph、Deep Agents 的分工与边界
+- 说清 `LangChain`、`LangGraph`、`Deep Agents` 的分工与边界
 - 设计 Agent 的工具层、知识层、状态层、体验层、治理层和评测层
 - 在 AI Agent 协作下完成一个从后端到前端的 Agent 产品原型
 - 看懂 Agent 项目里的关键代码、关键文件和关键逻辑
+- 对 AI 写出的代码做审核判断，而不是只接受结果
 - 清楚解释自己的架构、交付路径、风险边界和下一步迭代方向
 
 ## Quick Start
@@ -64,37 +66,27 @@
 ```text
 Stage 1  Agent Foundations     -> 判断一个需求是否真的需要 Agent
 Stage 2  LangChain Builder     -> 搭出高层 Agent 原型
-Stage 3  LangGraph Systems     -> 设计状态、分支、审批、恢复
-Stage 4  Deep Agents           -> 处理复杂任务、规划、子代理、上下文工程
+Stage 3  LangGraph Systems     -> 设计状态、分支、审批与恢复
+Stage 4  Deep Agents           -> 处理复杂任务、规划、子代理与上下文工程
 Stage 5  Agent Engineering     -> 接入 MCP / RAG / Memory / DB / API / Eval
 Stage 6  Agent Frontend        -> 设计 Agent UX、Streaming、审批界面、状态可视化
 Stage 7  Full-stack Delivery   -> 组装、部署、追踪、评测、交付
 Stage 8  Capstone Mastery      -> 完成毕业项目、答辩、复盘与迁移
 ```
 
-## Course Map
-
-| Layer | What You Learn | Key Entry |
-| --- | --- | --- |
-| Foundations | Agent 系统判断、边界、失败路径 | [Stage 1](./01-curriculum/stages/stage-1-agent-foundations/README.md) |
-| Frameworks | LangChain、LangGraph、Deep Agents 三层主线 | [Stages](./01-curriculum/stages/README.md) |
-| Engineering | MCP、RAG、Memory、DB、API、Eval、治理 | [Stage 5](./01-curriculum/stages/stage-5-agent-engineering/README.md) |
-| Frontend | Agent UX、Streaming、审批、结构化展示 | [Stage 6](./01-curriculum/stages/stage-6-agent-frontend/README.md) |
-| Delivery | 全栈交付、部署、评测、产品化 | [Stage 7](./01-curriculum/stages/stage-7-fullstack-delivery/README.md) |
-| Capstone | 毕业项目、答辩、复盘、迁移 | [Stage 8](./01-curriculum/stages/stage-8-capstone-mastery/README.md) |
-
 ## Current Build Snapshot
 
 当前已经完成：
 
 - `Stage 1-8` 的教材级教学包
-- 每个阶段的知识、方法、引导项目、主动练习、放行清单、Codex 对练、session 路线和案例对照库
+- 每个阶段的知识、方法、引导项目、主动练习、放行清单、Codex 对练、session 路线和案例对照
 - 分阶段项目目录与 AI 项目教学协议
 - 全栈 Agent 学习路径、阶段放行标准与 Rubric
 - 仓库首页、课程总导航和高频入口校准
 - 课程主设计里已明确加入“代码理解与审核”要求
+- `Stage 1-8` 的项目、考核与对练都已经接入读码主线
 
-当前仍然适合继续增强：
+当前仍适合继续增强：
 
 - 更细的 lesson 级讲义
 - 更厚的知识库模块
@@ -128,7 +120,7 @@ Stage 8  Capstone Mastery      -> 完成毕业项目、答辩、复盘与迁移
 - `Homework Project`
   只给需求与验收标准，不直接给完整答案，由学习者独立完成，再由 AI 做评审
 
-此外，所有项目都应训练一条额外主线：
+此外，所有项目都训练一条额外主线：
 
 - 用户要能看懂不同功能分别由哪些文件和代码负责
 - 用户要能用自然语言解释关键实现逻辑
@@ -139,17 +131,6 @@ Stage 8  Capstone Mastery      -> 完成毕业项目、答辩、复盘与迁移
 - [AI Project Teaching Protocol](./03-projects/ai-project-teaching-protocol.md)
 - [Project Catalog](./03-projects/project-catalog.md)
 - [Project Templates](./03-projects/templates/README.md)
-
-## Official Reference Backbone
-
-这套课程当前以 LangChain 官方新版文档为主线依据：
-
-- [LangChain Overview](https://docs.langchain.com/oss/python/langchain/overview)
-- [LangGraph Overview](https://docs.langchain.com/oss/python/langgraph/overview)
-- [Deep Agents Overview](https://docs.langchain.com/oss/python/deepagents/overview)
-- [Model Context Protocol (MCP)](https://docs.langchain.com/oss/python/langchain/mcp)
-- [LangSmith Deployment](https://docs.langchain.com/langsmith/deployment)
-- [LangSmith Evaluation](https://docs.langchain.com/langsmith/evaluation)
 
 ## Repository Guide
 
