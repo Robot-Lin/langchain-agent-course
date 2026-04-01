@@ -8,41 +8,55 @@
 
 一个面向 IDE + Codex 协作学习的完整 Agent 教学课程，围绕 `LangChain`、`LangGraph`、`Deep Agents` 展开，并系统覆盖 `MCP`、`RAG`、`Memory`、数据库、后端 API、前端 Agent UX、评测、观测、部署与毕业项目。
 
-这不是一份单次写完的“教程文档”，而是一套可以持续扩建的课程工程。目标是让学习者不是只会“调用一个 Agent”，而是能在 AI Agent 的帮助下，从后端到前端构建一个功能完整、结构清晰、可评测、可迭代的 Agent 产品。
+这不是一份单次写完的“教程文档”，而是一套可以持续扩建的课程工程。目标是让学习者不只是会“调用一个 Agent”，而是能在 AI Agent 的帮助下，从后端到前端构建一个功能完整、结构清晰、可评测、可迭代的 Agent 产品。
+
+## Why This Repo Exists
+
+这套课程想解决的不是“如何快速跑一个 Demo”，而是下面这条完整学习链路：
+
+- 判断一个需求是否真的需要 Agent
+- 选择合适的框架层级
+- 搭建可工作的 Agent 系统
+- 补齐知识、工具、状态、评测和治理
+- 做出真正可用的前端体验
+- 交付一个从后端到前端闭环的 Agent 产品
+
+## Who This Course Is For
+
+适合这样的学习者：
+
+- 对 Agent 已经有基础了解
+- 有一定提示词构建能力
+- 能描述自己的需求、流程或产品想法
+- 想在 IDE 中和 Codex 结对学习，而不是只看文档
+- 希望最终做出一个真正可演示、可解释、可迭代的 Agent 项目
+
+## What You Will Be Able To Do
+
+完成这套课程后，学习者应能：
+
+- 判断一个问题是否真的需要 Agent
+- 说清 LangChain、LangGraph、Deep Agents 的分工与边界
+- 设计 Agent 的工具层、知识层、状态层、体验层、治理层和评测层
+- 在 AI Agent 协作下完成一个从后端到前端的 Agent 产品原型
+- 清楚解释自己的架构、交付路径、风险边界和下一步迭代方向
 
 ## Quick Start
 
-- [Start Here](./00-start-here/README.md)
-- [Course Roadmap](./01-curriculum/course-roadmap.md)
-- [Stages Index](./01-curriculum/stages/README.md)
-- [Stage 1 Course Pack](./01-curriculum/stages/stage-1-agent-foundations/README.md)
+如果你是第一次进入这个仓库，建议按下面顺序开始：
+
+1. [Start Here](./00-start-here/README.md)
+2. [Course Roadmap](./01-curriculum/course-roadmap.md)
+3. [Learning Loop](./01-curriculum/learning-loop.md)
+4. [Stages Index](./01-curriculum/stages/README.md)
+5. [Stage 1 Course Pack](./01-curriculum/stages/stage-1-agent-foundations/README.md)
+
+常用入口：
+
 - [Project Teaching Protocol](./03-projects/ai-project-teaching-protocol.md)
+- [Course Build Status](./COURSE_BUILD_STATUS.md)
 - [Repository Roadmap](./ROADMAP.md)
 - [Changelog](./CHANGELOG.md)
-
-## At a Glance
-
-**What this repo is**
-
-一个完整的 Agent 学习课程仓库，不只是文档集合，而是一套阶段化、项目化、可用 Codex 结对推进的学习系统。
-
-**What makes it different**
-
-- 不从 API 调用开始，而从系统判断开始
-- 不只教后端 Agent，也覆盖前端 Agent UX 和全栈交付
-- 每个阶段都有跟学项目、课后项目、效果标准和验收标准
-- 最终收束到一个可答辩、可复盘、可迁移的毕业项目
-
-**Final outcome**
-
-学习者能够在 AI Agent 的帮助下，设计并交付一个从后端到前端的 Agent 产品原型。
-
-## Project Status
-
-- [Current Build Status](./COURSE_BUILD_STATUS.md)
-- [Repository Roadmap](./ROADMAP.md)
-- [Changelog](./CHANGELOG.md)
-- [Contributing Guide](./CONTRIBUTING.md)
 
 ## Course Roadmap Snapshot
 
@@ -76,6 +90,7 @@ Stage 8  Capstone Mastery      -> 完成毕业项目、答辩、复盘与迁移
 - 每个阶段的知识、方法、引导项目、主动练习、放行清单、Codex 对练、session 路线和案例对照库
 - 分阶段项目目录与 AI 项目教学协议
 - 全栈 Agent 学习路径、阶段放行标准与 Rubric
+- 仓库首页、课程总导航和高频入口校准
 
 当前仍然适合继续增强：
 
@@ -83,17 +98,6 @@ Stage 8  Capstone Mastery      -> 完成毕业项目、答辩、复盘与迁移
 - 更厚的知识库模块
 - 可运行参考实现与前端原型
 - 更完整的答辩模板、评审模板和毕业项目支撑材料
-
-## Official Reference Backbone
-
-这套课程当前以 LangChain 官方新版文档为主线依据：
-
-- [LangChain Overview](https://docs.langchain.com/oss/python/langchain/overview)
-- [LangGraph Overview](https://docs.langchain.com/oss/python/langgraph/overview)
-- [Deep Agents Overview](https://docs.langchain.com/oss/python/deepagents/overview)
-- [Model Context Protocol (MCP)](https://docs.langchain.com/oss/python/langchain/mcp)
-- [LangSmith Deployment](https://docs.langchain.com/langsmith/deployment)
-- [LangSmith Evaluation](https://docs.langchain.com/langsmith/evaluation)
 
 ## How Learning Works
 
@@ -127,15 +131,25 @@ Stage 8  Capstone Mastery      -> 完成毕业项目、答辩、复盘与迁移
 - [Project Catalog](./03-projects/project-catalog.md)
 - [Project Templates](./03-projects/templates/README.md)
 
-## Recommended Reading Order
+## Official Reference Backbone
 
-如果你是第一次进入这个仓库，建议按下面顺序开始：
+这套课程当前以 LangChain 官方新版文档为主线依据：
 
-1. [Start Here](./00-start-here/README.md)
-2. [Course Roadmap](./01-curriculum/course-roadmap.md)
-3. [Learning Loop](./01-curriculum/learning-loop.md)
-4. [Stages Index](./01-curriculum/stages/README.md)
-5. [Stage 1 Course Pack](./01-curriculum/stages/stage-1-agent-foundations/README.md)
+- [LangChain Overview](https://docs.langchain.com/oss/python/langchain/overview)
+- [LangGraph Overview](https://docs.langchain.com/oss/python/langgraph/overview)
+- [Deep Agents Overview](https://docs.langchain.com/oss/python/deepagents/overview)
+- [Model Context Protocol (MCP)](https://docs.langchain.com/oss/python/langchain/mcp)
+- [LangSmith Deployment](https://docs.langchain.com/langsmith/deployment)
+- [LangSmith Evaluation](https://docs.langchain.com/langsmith/evaluation)
+
+## Repository Guide
+
+- [Start Here](./00-start-here/README.md)
+- [Curriculum](./01-curriculum/README.md)
+- [Knowledge Base](./02-knowledge-base/README.md)
+- [Projects](./03-projects/README.md)
+- [Assessments](./04-assessments/README.md)
+- [Codex Collaboration](./05-codex-collaboration/README.md)
 
 ## Vision
 
