@@ -1,10 +1,10 @@
-# Stage 8: Capstone Mastery
+﻿# Stage 8: Capstone Mastery
 
 ## 阶段目标
 
-- 完成一个从后端到前端的毕业级 Agent 项目
-- 形成可迁移的系统设计能力
-- 建立独立持续迭代的能力
+- 完成一个从后端到前端的毕业级 Agent 项目。
+- 形成可迁移的系统设计与产品迭代能力。
+- 建立独立构建、答辩、复盘和迁移的方法。
 
 ## 毕业项目要求
 
@@ -69,9 +69,12 @@
 ## 详细教学包
 
 - [Stage 8 入口](X:/AI%20work/LangChain%20Tutorial/01-curriculum/stages/stage-8-capstone-mastery/README.md)
+- [概览](X:/AI%20work/LangChain%20Tutorial/01-curriculum/stages/stage-8-capstone-mastery/01-overview.md)
 - [核心概念](X:/AI%20work/LangChain%20Tutorial/01-curriculum/stages/stage-8-capstone-mastery/02-concepts.md)
 - [方法模板](X:/AI%20work/LangChain%20Tutorial/01-curriculum/stages/stage-8-capstone-mastery/03-methods.md)
 - [毕业项目引导](X:/AI%20work/LangChain%20Tutorial/01-curriculum/stages/stage-8-capstone-mastery/04-guided-project.md)
 - [毕业挑战与答辩准备](X:/AI%20work/LangChain%20Tutorial/01-curriculum/stages/stage-8-capstone-mastery/05-challenges.md)
 - [毕业验收与复盘](X:/AI%20work/LangChain%20Tutorial/01-curriculum/stages/stage-8-capstone-mastery/06-review-checklist.md)
-- [与 Codex 对练](X:/AI%20work/LangChain%20Tutorial/01-curriculum/stages/stage-8-capstone-mastery/07-codex-workshop.md)
+- [Codex 对练](X:/AI%20work/LangChain%20Tutorial/01-curriculum/stages/stage-8-capstone-mastery/07-codex-workshop.md)
+- [Session 路线](X:/AI%20work/LangChain%20Tutorial/01-curriculum/stages/stage-8-capstone-mastery/08-session-roadmap.md)
+- [案例对照库](X:/AI%20work/LangChain%20Tutorial/01-curriculum/stages/stage-8-capstone-mastery/09-case-comparisons.md)
