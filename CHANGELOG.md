@@ -1,8 +1,7 @@
-# Changelog
+﻿# Changelog
 
-本文件记录这个课程仓库的重要结构更新与内容演进。
-
-格式参考 [Keep a Changelog](https://keepachangelog.com/en/1.1.0/)，版本策略暂时以仓库里程碑为主。
+本文档记录这个课程仓库的重要结构更新与内容演进。
+格式参考 [Keep a Changelog](https://keepachangelog.com/en/1.1.0/)。
 
 ## [Unreleased]
 
