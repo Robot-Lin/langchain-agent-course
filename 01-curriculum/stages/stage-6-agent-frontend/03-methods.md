@@ -69,3 +69,97 @@
 ## 方法目标
 
 真正掌握 Stage 6，不是“会画页面”，而是能把后端复杂性翻译成用户能理解、能控制、能信任的前端体验。
+
+## 附录：Stage 6 API 对照表
+
+这一节把官方前端文档里最关键的能力，对回代码阅读时应该识别的点。
+
+### 前端流式接入层
+
+- `useStream(...)`
+  作用：连接前端和 agent server。
+  看代码时要找：哪个 hook 或页面文件在初始化它。
+
+- `stream.messages`
+  作用：提供消息流数据。
+  看代码时要找：消息区、工具消息、结构化结果提取逻辑。
+
+- `stream.isLoading`
+  作用：表示当前是否仍在运行。
+  看代码时要找：loading indicator、禁用按钮、占位 UI。
+
+- `stream.submit(...)`
+  作用：提交新请求或恢复执行。
+  看代码时要找：输入组件提交、审批恢复、重试入口。
+
+- `stream.switchThread(null)`
+  作用：开始一个新线程。
+  看代码时要找：重新开始、清空对话、重置状态。
+
+### Structured output 渲染层
+
+- `tool_calls`
+  作用：structured output 的数据来源。
+  看代码时要找：哪个工具被当成“结构化输出工具”使用。
+
+- `extractStructuredOutput<T>(...)`
+  作用：从消息里提取结构化对象。
+  看代码时要找：结果卡片前的数据整理函数。
+
+- `requiredFields`
+  作用：避免在 streaming 半成品阶段过早渲染。
+  看代码时要找：哪些字段被当作“可安全展示”的阈值。
+
+- `Partial<T>`
+  作用：支持 progressive rendering。
+  看代码时要找：前端如何分阶段展示结果。
+
+### 审批与中断层
+
+- `stream.interrupt`
+  作用：承接后端 interrupt。
+  看代码时要找：审批卡片、待审操作区、阻塞提示。
+
+- `stream.submit(null, { command: { resume: response } })`
+  作用：把 approve / reject / edit 的决定送回后端。
+  看代码时要找：审批按钮点击后的恢复逻辑。
+
+- `actionRequests`
+  作用：告诉前端 agent 想执行什么动作。
+  看代码时要找：审批卡片里显示哪些操作说明和参数。
+
+- `reviewConfigs`
+  作用：决定哪些决策按钮应当出现。
+  看代码时要找：approve / reject / edit 的按钮条件。
+
+### Streaming 事件层
+
+- `stream_mode="messages"`
+  作用：流式 token 和 tool call chunks。
+  看代码时要找：聊天气泡逐字渲染、工具调用预览。
+
+- `stream_mode="updates"`
+  作用：每步运行完成后的状态更新。
+  看代码时要找：timeline、阶段状态、节点完成提示。
+
+- `stream_mode="custom"`
+  作用：工具或节点写出的自定义进度信号。
+  看代码时要找：进度条、状态面板、提示横幅。
+
+- `version="v2"`
+  作用：统一的 `StreamPart` 输出格式。
+  看代码时要找：`chunk["type"] / chunk["data"] / chunk["ns"]` 的分发逻辑。
+
+### 界面骨架层
+
+- `Agent Chat UI`
+  作用：提供最小可用的 conversational agent UI 基线。
+  看代码时要找：tool visualization、interrupt、thread 恢复。
+
+### 读 API 时最重要的原则
+
+不要把前端 hook 和组件模式当成“框架语法题”。你真正要问的是：
+
+- 这个 API 对应了用户旅程里的哪一步
+- 它在前端是状态源、渲染层还是控制入口
+- 如果它失效了，用户会在哪个体验点失去理解或控制

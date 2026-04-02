@@ -24,7 +24,8 @@ Agent UX、streaming、structured output rendering、human-in-the-loop UI、stat
 2. 再设计结果区、来源区和审批区
 3. 处理 streaming 与状态同步
 4. 让结果结构化可读
-5. 最后按组件树读懂前端主路径
+5. 回头对照 [02-concepts.md](./02-concepts.md) 里的代码教材和 [03-methods.md](./03-methods.md) 里的 API 对照
+6. 最后按 [10-full-project-reading.md](./10-full-project-reading.md) 扫完整个前端项目
 
 ## 本章必须完成的代码导读
 
@@ -33,11 +34,13 @@ Agent UX、streaming、structured output rendering、human-in-the-loop UI、stat
 - 先列出关键文件或关键模块
 - 再说清它们各自负责什么
 - 再解释一条主路径如何从输入走到输出
+- 再补一张全项目组件与文件地图
 - 最后指出如果你来审核，会优先看哪 2 到 3 个风险点
 
 ## 最终交付物
 
 - 界面结构图、状态展示规则、组件职责表、关键交互逻辑解释
+- 一份全项目组件与文件地图
 - 一份主路径解释
 - 一份用户审核要点清单
 
