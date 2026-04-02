@@ -124,3 +124,203 @@
 ## Stage 4 的方法目标
 
 真正掌握本阶段，不是“会说 planning、context engineering、subagents 这些词”，而是能把复杂任务整理成一个可执行、可管理、可治理的 Agent 结构。
+
+## 附录：Stage 4 API 对照读法
+
+这一节把 `Stage 4` 的知识点和 Deep Agents 官方 API 做一张清晰对照表。
+
+目标不是背 API，而是回答：
+
+- 这个知识点会落到哪个模块
+- 这段代码为什么写在这里
+- 这个 API 在项目里通常负责哪一层
+
+### 总表
+
+| 课程知识点 | 主要 API / 模块 | 在项目里通常负责什么 |
+| --- | --- | --- |
+| 高层入口 | `deepagents.create_deep_agent` | 装配复杂任务 harness 主入口 |
+| 主模型 | `model=` / `init_chat_model(...)` | 指定主代理所用模型 |
+| 普通工具 | `tools=` | 给主代理接自定义工具 |
+| 子代理 | `subagents=` | 提供上下文隔离和角色分工 |
+| 运行时上下文 | `context_schema=` / `ToolRuntime[...]` | 向工具和系统层传递 per-run 配置 |
+| 始终注入记忆 | `memory=` | 加载 AGENTS.md 等长期上下文 |
+| 按需技能 | `skills=` | 提供 progressive disclosure 能力 |
+| 风险治理 | `interrupt_on=` | 对敏感工具加审批和编辑控制 |
+| 状态持久化 | `checkpointer=` | 支撑 HITL、恢复与长任务 |
+| 结构化结果 | `response_format=` | 让复杂任务输出可验证结构 |
+| 文件系统与长期记忆 | `backend=` / `store=` | 控制当前线程工作区和跨线程持久化 |
+
+### 1. `create_deep_agent`
+
+官方来源：
+
+- [Deep Agents overview](https://docs.langchain.com/oss/python/deepagents/overview)
+- [Customize Deep Agents](https://docs.langchain.com/oss/python/deepagents/customization)
+
+它在课程里的意义：
+
+- `Stage 4` 的 harness 入口
+- 把 planning、filesystem、subagents、memory 和治理能力组织起来
+
+你在项目里看到它时，要先问：
+
+- 这个复杂任务到底为什么需要 harness
+- 当前配置里最关键的复杂度来源是什么
+
+### 2. `tools=`
+
+官方来源：
+
+- [Customize Deep Agents](https://docs.langchain.com/oss/python/deepagents/customization)
+
+它在课程里的意义：
+
+- 把主代理真正可调用的外部能力接进来
+
+你在项目里看到它时，要先问：
+
+- 这些工具是给主代理还是本该下放给子代理
+- 工具描述是否真的能帮助模型正确选用
+
+### 3. `subagents=`
+
+官方来源：
+
+- [Customize Deep Agents](https://docs.langchain.com/oss/python/deepagents/customization)
+- [Context engineering in Deep Agents](https://docs.langchain.com/oss/python/deepagents/context-engineering)
+
+它在课程里的意义：
+
+- 把复杂任务拆成具备 context isolation 的子任务结构
+
+你在项目里看到它时，要先问：
+
+- 这个子代理是否真的需要独立上下文
+- 子代理返回的是摘要还是原始噪音
+- 主代理和子代理的边界是否清楚
+
+### 4. `context_schema=`
+
+官方来源：
+
+- [Context engineering in Deep Agents](https://docs.langchain.com/oss/python/deepagents/context-engineering)
+
+它在课程里的意义：
+
+- 把每次运行的静态配置正规化，而不是混进 prompt
+
+你在项目里看到它时，要先问：
+
+- 这是该给模型看的上下文，还是该给工具看的上下文
+- 哪些信息应该进 runtime context，哪些不该
+
+### 5. `memory=`
+
+官方来源：
+
+- [Context engineering in Deep Agents](https://docs.langchain.com/oss/python/deepagents/context-engineering)
+- [Customize Deep Agents](https://docs.langchain.com/oss/python/deepagents/customization)
+
+它在课程里的意义：
+
+- 注入始终应生效的长期记忆文件
+
+你在项目里看到它时，要先问：
+
+- 这些内容是不是每次都必须加载
+- 这里是否错误地把技能材料塞进了 memory
+
+### 6. `skills=`
+
+官方来源：
+
+- [Context engineering in Deep Agents](https://docs.langchain.com/oss/python/deepagents/context-engineering)
+- [Customize Deep Agents](https://docs.langchain.com/oss/python/deepagents/customization)
+
+它在课程里的意义：
+
+- 提供按需加载的能力说明和工作流知识
+
+你在项目里看到它时，要先问：
+
+- 这份 skill 是否足够聚焦
+- 这里是不是本该拆成 memory 和 skills 两层
+
+### 7. `interrupt_on=`
+
+官方来源：
+
+- [Human-in-the-loop](https://docs.langchain.com/oss/python/deepagents/human-in-the-loop)
+
+它在课程里的意义：
+
+- 为敏感工具配置审批策略
+
+你在项目里看到它时，要先问：
+
+- 哪些工具允许 approve / edit / reject
+- 决策列表是否匹配风险等级
+- 这里有没有忘记配 checkpointer
+
+### 8. `checkpointer=`
+
+官方来源：
+
+- [Human-in-the-loop](https://docs.langchain.com/oss/python/deepagents/human-in-the-loop)
+
+它在课程里的意义：
+
+- 支撑长任务和人类介入的持久化基础
+
+你在项目里看到它时，要先问：
+
+- 当前只是开发期 saver，还是生产级 saver
+- thread_id 是否被稳定复用
+
+### 9. `response_format=`
+
+官方来源：
+
+- [Customize Deep Agents](https://docs.langchain.com/oss/python/deepagents/customization)
+
+它在课程里的意义：
+
+- 让复杂任务的结果可以结构化落盘和被下游消费
+
+你在项目里看到它时，要先问：
+
+- 结构化结果是给谁消费的
+- 哪些字段会影响后续审核或前端展示
+
+### 10. `backend=` / `store=`
+
+官方来源：
+
+- [Context engineering in Deep Agents](https://docs.langchain.com/oss/python/deepagents/context-engineering)
+- [Customize Deep Agents](https://docs.langchain.com/oss/python/deepagents/customization)
+
+它在课程里的意义：
+
+- 决定文件系统、工作区和长期记忆如何分层存储
+
+你在项目里看到它时，要先问：
+
+- 当前工作文件和长期记忆是否被混在一起
+- 哪些路径应该路由到 durable store
+
+### 读代码时的固定顺序
+
+以后在 `Stage 4` 看到一份 Deep Agents 代码，先按这个顺序读：
+
+1. 找 `create_deep_agent(...)`
+2. 看 `tools=`
+3. 看 `subagents=`
+4. 看 `context_schema=` / `memory=` / `skills=`
+5. 看 `interrupt_on=` / `checkpointer=`
+6. 看 `backend=` / `store=`
+7. 再看 `response_format=` 和 `invoke(...)`
+
+### 这一节最该记住的话
+
+`Stage 4` 不是让你背 Deep Agents 的配置项，而是学会把“目标拆解、上下文层次、子代理边界、风险治理、长期记忆”映射到一组清楚的 harness 配置上。

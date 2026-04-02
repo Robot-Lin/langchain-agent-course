@@ -196,3 +196,371 @@ subagents 的真正价值是:
 进入 `Stage 5` 之前，先记住这句话:
 
 > 复杂任务型 Agent 的难点，不只是流程更复杂，而是目标拆解、上下文组织、角色分工和治理设计都开始成为系统核心。
+
+## 13. 代码教材：最小 Deep Agent 原型
+
+这一节不是项目文档，而是 `Stage 4` 的代码教材。
+
+目标很明确：
+
+- 用最小代码示例讲清 `Deep Agents` 如何把复杂任务组织起来
+- 用逐段解释把概念、API 和效果连接起来
+- 给后面的项目读码、读主代理和读子代理提供“标准参照物”
+
+所有示例都尽量贴近官方最新版 Deep Agents 文档的能力主线：
+
+- `create_deep_agent`
+- 内建 planning / `write_todos`
+- context management / filesystem backends
+- subagents
+- `memory`
+- `interrupt_on`
+- `response_format`
+
+### 示例 1：最小 `create_deep_agent`
+
+对应官方文档：
+
+- [Deep Agents overview](https://docs.langchain.com/oss/python/deepagents/overview)
+
+```python
+from deepagents import create_deep_agent
+
+
+def get_weather(city: str) -> str:
+    """Get weather for a given city."""
+    return f"It's always sunny in {city}!"
+
+
+agent = create_deep_agent(
+    tools=[get_weather],
+    system_prompt="You are a helpful assistant.",
+)
+
+result = agent.invoke(
+    {
+        "messages": [
+            {"role": "user", "content": "What is the weather in sf?"}
+        ]
+    }
+)
+```
+
+#### 逐段解释
+
+`from deepagents import create_deep_agent`
+
+- 这是最新版 Deep Agents 的高层入口。
+- 它不是普通 `create_agent` 的同义词，而是复杂任务 harness 的入口。
+
+`tools=[get_weather]`
+
+- 你仍然可以传普通工具。
+- 但 Deep Agents 的真正差别不只在工具，而在内建任务组织能力。
+
+`system_prompt=...`
+
+- 依然重要，但系统真正变强的地方不只是 prompt，而是 planning、context 和 subagents 的内建组织能力。
+
+### 示例 2：把复杂任务交给 harness，而不是手工堆 planner
+
+对应官方文档：
+
+- [Deep Agents overview](https://docs.langchain.com/oss/python/deepagents/overview)
+
+```python
+from deepagents import create_deep_agent
+
+
+agent = create_deep_agent(
+    model="openai:gpt-5.2",
+    system_prompt=(
+        "You are a research assistant. "
+        "Break complex work into clear steps and keep progress visible."
+    ),
+)
+```
+
+#### 逐段解释
+
+这一段看起来很短，但课程里最重要的理解是：
+
+- Deep Agents 自带 planning 和复杂任务 harness
+- 你不是从零开始自己手搓一个 planner、task queue 和 subagent loop
+- 这也是它和纯 LangGraph 工作流的一个关键差异
+
+官方文档里把这条线讲得很明确：
+
+- built-in task planning
+- subagent spawning
+- file systems for context management
+- long-term memory
+
+### 示例 3：显式加 `subagents`
+
+对应官方文档：
+
+- [Customize Deep Agents](https://docs.langchain.com/oss/python/deepagents/customization)
+- [Context engineering in Deep Agents](https://docs.langchain.com/oss/python/deepagents/context-engineering)
+
+```python
+from deepagents import create_deep_agent
+
+
+def web_search(query: str) -> str:
+    """Search the web for a topic."""
+    return f"Search results for: {query}"
+
+
+agent = create_deep_agent(
+    tools=[web_search],
+    subagents=[
+        {
+            "name": "researcher",
+            "description": "Conducts focused research on a topic",
+            "system_prompt": (
+                "You are a research subagent. "
+                "Return only a concise synthesis, not raw search logs."
+            ),
+            "tools": [web_search],
+        }
+    ],
+)
+```
+
+#### 逐段解释
+
+`subagents=[...]`
+
+- 这里不是简单“多开一个 agent”。
+- 真正要看的是：为什么这个子代理值得存在，它隔离了什么上下文。
+
+`system_prompt` for subagent
+
+- 子代理不是主代理 prompt 的复制品。
+- 它通常应该有更窄、更清楚的角色边界。
+
+`Return only a concise synthesis`
+
+- 这是课程里特别重要的一点：
+  子代理存在的价值之一，就是把重工作隔离掉，然后把结果压缩回主代理。
+
+### 示例 4：`context_schema` 与运行时上下文
+
+对应官方文档：
+
+- [Context engineering in Deep Agents](https://docs.langchain.com/oss/python/deepagents/context-engineering)
+
+```python
+from dataclasses import dataclass
+from deepagents import create_deep_agent
+from langchain.tools import tool, ToolRuntime
+
+
+@dataclass
+class Context:
+    user_id: str
+    role: str
+
+
+@tool
+def fetch_user_data(query: str, runtime: ToolRuntime[Context]) -> str:
+    """Fetch data for the current user."""
+    return f"Data for user {runtime.context.user_id}: {query}"
+
+
+agent = create_deep_agent(
+    tools=[fetch_user_data],
+    context_schema=Context,
+)
+```
+
+#### 逐段解释
+
+`context_schema=Context`
+
+- 这是官方最新版里非常值得注意的一点。
+- runtime context 并不会自动变成 prompt 文本，而是作为每次运行的静态配置传下去。
+
+`ToolRuntime[Context]`
+
+- 工具可以直接读 runtime context。
+- 这让“用户元数据 / 权限 / API key / feature flag”这类东西不需要硬塞进 prompt。
+
+这也是 context engineering 的一个核心升级：
+
+- 不是把所有信息都变成模型可见文本
+- 而是把该给工具和系统层的信息放在 runtime context
+
+### 示例 5：`memory` 和 AGENTS.md
+
+对应官方文档：
+
+- [Context engineering in Deep Agents](https://docs.langchain.com/oss/python/deepagents/context-engineering)
+- [Customize Deep Agents](https://docs.langchain.com/oss/python/deepagents/customization)
+
+```python
+from deepagents import create_deep_agent
+
+
+agent = create_deep_agent(
+    memory=["/project/AGENTS.md", "~/.deepagents/preferences.md"],
+)
+```
+
+#### 逐段解释
+
+`memory=[...]`
+
+- 这里的 memory 在 Deep Agents 里通常不是“对话里临时记住一句话”。
+- 它更像始终注入的记忆文件，常常用来放项目约定、偏好和长期指令。
+
+课程里要特别记住：
+
+- memory 是 always loaded
+- skills 是按需 progressive disclosure
+
+也就是说：
+
+- 记忆放“总是重要”的东西
+- 技能放“按需展开”的工作流知识
+
+### 示例 6：`interrupt_on` 和人类审核
+
+对应官方文档：
+
+- [Human-in-the-loop](https://docs.langchain.com/oss/python/deepagents/human-in-the-loop)
+
+```python
+from langchain.tools import tool
+from deepagents import create_deep_agent
+from langgraph.checkpoint.memory import MemorySaver
+
+
+@tool
+def delete_file(path: str) -> str:
+    """Delete a file."""
+    return f"Deleted {path}"
+
+
+@tool
+def read_file(path: str) -> str:
+    """Read a file."""
+    return f"Contents of {path}"
+
+
+checkpointer = MemorySaver()
+
+agent = create_deep_agent(
+    tools=[delete_file, read_file],
+    interrupt_on={
+        "delete_file": True,
+        "read_file": False,
+    },
+    checkpointer=checkpointer,
+)
+```
+
+#### 逐段解释
+
+`interrupt_on={...}`
+
+- 这说明 Deep Agents 的人类审核并不是抽象概念，而是工具级别的风险控制。
+
+`checkpointer=checkpointer`
+
+- 官方文档明确要求：human-in-the-loop 需要 checkpointer。
+- 这再次说明 Deep Agents 仍然建立在 LangGraph runtime 能力之上。
+
+### 示例 7：`response_format`
+
+对应官方文档：
+
+- [Customize Deep Agents](https://docs.langchain.com/oss/python/deepagents/customization)
+
+```python
+from pydantic import BaseModel, Field
+from deepagents import create_deep_agent
+
+
+class ResearchReport(BaseModel):
+    summary: str = Field(description="Short summary of the research result")
+    key_findings: list[str] = Field(description="Main findings")
+    open_questions: list[str] = Field(description="What remains unclear")
+
+
+agent = create_deep_agent(
+    tools=[],
+    response_format=ResearchReport,
+)
+```
+
+#### 逐段解释
+
+`response_format=ResearchReport`
+
+- Deep Agents 也支持 structured output。
+- 这很重要，因为复杂任务不是只能输出长文本报告，也可以输出可被后续系统消费的结构。
+
+`structured_response`
+
+- 官方文档说明结构化结果会落在 deep agent state 的 `structured_response` 里。
+- 这也是后面前端渲染和自动审核的重要基础。
+
+### 示例 8：用后端区分“当前线程工作区”和“长期记忆”
+
+对应官方文档：
+
+- [Context engineering in Deep Agents](https://docs.langchain.com/oss/python/deepagents/context-engineering)
+
+```python
+from deepagents import create_deep_agent
+from deepagents.backends import CompositeBackend, StateBackend, StoreBackend
+from langgraph.store.memory import InMemoryStore
+
+
+def make_backend(runtime):
+    return CompositeBackend(
+        default=StateBackend(runtime),
+        routes={"/memories/": StoreBackend(runtime)},
+    )
+
+
+agent = create_deep_agent(
+    store=InMemoryStore(),
+    backend=make_backend,
+    system_prompt=(
+        "Save durable user preferences under /memories/ when they are important "
+        "across future conversations."
+    ),
+)
+```
+
+#### 逐段解释
+
+`CompositeBackend(...)`
+
+- 这是课程里特别值得讲清的地方：
+  Deep Agents 的 context 管理不只是“给上下文”，还包括“把信息存到哪里”。
+
+`default=StateBackend(runtime)`
+
+- 当前线程内工作区。
+
+`routes={"/memories/": StoreBackend(runtime)}`
+
+- 把某些路径路由到跨线程持久层。
+
+这正是官方文档里 long-term memory 的核心思想：
+
+- 不是所有文件都长期保存
+- 只有某些路径进入 durable store
+
+### 这一节最该记住的 6 句话
+
+1. `create_deep_agent` 是复杂任务 harness 的高层入口。
+2. Deep Agents 的强项不只是工具，而是 planning、context 和 subagents 的内建组织。
+3. 子代理的价值在于 context isolation，而不是“多开几个角色”。
+4. runtime context、memory、skills、backend 各有职责，不该混成一个大 prompt。
+5. `interrupt_on` 和 `checkpointer` 说明复杂任务仍然要正式治理。
+6. Deep Agents 也支持 structured output，所以复杂任务结果同样可以被系统化消费。

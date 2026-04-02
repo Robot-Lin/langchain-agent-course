@@ -20,6 +20,7 @@
 
 - [01-overview.md](./01-overview.md)
 - [02-concepts.md](./02-concepts.md)
+- [03-methods.md](./03-methods.md) 末尾附录
 
 ### 要做什么
 
@@ -42,6 +43,7 @@
 ### 先读什么
 
 - [03-methods.md](./03-methods.md)
+- [02-concepts.md](./02-concepts.md) 后半部分代码教材
 
 ### 要做什么
 
@@ -63,6 +65,7 @@
 
 - [02-concepts.md](./02-concepts.md)
 - [03-methods.md](./03-methods.md)
+- [02-concepts.md](./02-concepts.md) 后半部分代码教材
 
 ### 要做什么
 
@@ -84,6 +87,7 @@
 
 - [02-concepts.md](./02-concepts.md)
 - [09-case-comparisons.md](./09-case-comparisons.md)
+- [02-concepts.md](./02-concepts.md) 后半部分代码教材
 
 ### 要做什么
 
@@ -106,6 +110,7 @@
 ### 先读什么
 
 - [04-guided-project.md](./04-guided-project.md)
+- [10-full-project-reading.md](./10-full-project-reading.md)
 - [Stage 4 跟学项目](../../../03-projects/stage-4/guided-project-deep-research-agent.md)
 
 ### 要做什么
