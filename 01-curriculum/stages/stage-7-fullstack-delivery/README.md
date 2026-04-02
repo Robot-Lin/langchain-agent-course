@@ -1,17 +1,17 @@
 ﻿# Stage 7 教学包
 
-这是 Stage 7 的课程入口。这一章的核心目标是：把前后端、运行时、观测和部署打通，学会看懂全栈 Agent 产品的真实主路径。
+这是 Stage 7 的课程入口。这一章的核心目标是：把前后端、运行时、`LangSmith` 观测评测和部署打通，学会看懂全栈 Agent 产品的真实主路径。
 
 ## 学完这一章之后应该做到什么
 
-- 覆盖并理解这一章的核心能力：Agent Server、deployment、streaming integration、observability、evaluation、framework selection
+- 覆盖并理解这一章的核心能力：Agent Server、deployment、streaming integration、LangSmith observability、LangSmith evaluation、framework selection
 - 不只会描述架构，还能把知识点和实现方式连接起来
 - 看懂这一章里最关键的一类代码或伪代码结构
 - 在 AI 帮助下完成原型或方案后，能自己做审核判断
 
 ## 这一章要重点看懂什么代码
 
-- 重点看懂前后端边界、server routes、streaming 通道、trace 上报、环境配置和部署入口。
+- 重点看懂前后端边界、server routes、streaming 通道、LangSmith trace 上报、环境配置和部署入口。
 - 用户至少要能指出哪个文件、模块或函数在负责哪个功能
 - 用户至少要能讲清一条主路径是如何从输入走到输出的
 
@@ -37,7 +37,7 @@
 
 ## 对项目学习的要求
 
-- 用户应能解释一个请求如何从前端进入后端，再进入 Agent runtime，并返回结果和观测数据。
+- 用户应能解释一个请求如何从前端进入后端，再进入 Agent runtime，并返回结果和 LangSmith 观测数据。
 - 跟学项目里要做代码导读，课后项目里要做代码审核
 - 最终不仅要交出结果，还要交出我看懂了什么代码的说明
 

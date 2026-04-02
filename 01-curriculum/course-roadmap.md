@@ -116,15 +116,15 @@
 目标：
 
 - 把 Agent 做成真实工程系统，而不是 Demo
-- 补上知识接入、工具协议、数据层、后端接口、评测与治理
+- 补上知识接入、工具协议、数据层、后端接口、LangSmith 观测评测与治理
 
 核心主题：
 
 - MCP
 - RAG
 - Memory / 数据库 / API 边界
-- Observability
-- Evaluation
+- LangSmith Observability
+- LangSmith Evaluation
 - Governance
 
 建议项目：
@@ -161,7 +161,7 @@
 目标：
 
 - 把前后端、Agent runtime、数据层和知识层组装成完整产品
-- 学会 deployment、observability、evaluation 和版本迭代
+- 学会 deployment、LangSmith observability、LangSmith evaluation 和版本迭代
 - 具备交付全栈 Agent 产品的能力
 
 核心主题：
@@ -170,8 +170,8 @@
 - Agent Server
 - Streaming integration
 - Deployment
-- Observability
-- Evaluation
+- LangSmith Observability
+- LangSmith Evaluation
 - Framework selection
 
 建议项目：
@@ -209,5 +209,6 @@
 - [Deep Agents overview](https://docs.langchain.com/oss/python/deepagents/overview)
 - [Model Context Protocol (MCP)](https://docs.langchain.com/oss/python/langchain/mcp)
 - [LangChain frontend human-in-the-loop](https://docs.langchain.com/oss/python/langchain/frontend/human-in-the-loop)
+- [LangSmith Observability](https://docs.langchain.com/langsmith/observability)
 - [LangSmith Deployment](https://docs.langchain.com/langsmith/deployment)
 - [LangSmith Evaluation](https://docs.langchain.com/langsmith/evaluation)

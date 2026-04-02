@@ -21,8 +21,8 @@
 
 1. [01-overview.md](./01-overview.md)
 2. [02-concepts.md](./02-concepts.md)
-3. [09-case-comparisons.md](./09-case-comparisons.md)
-4. [03-methods.md](./03-methods.md)
+3. [03-methods.md](./03-methods.md)
+4. [09-case-comparisons.md](./09-case-comparisons.md)
 5. [08-session-roadmap.md](./08-session-roadmap.md)
 6. [04-guided-project.md](./04-guided-project.md)
 7. [10-full-project-reading.md](./10-full-project-reading.md)
@@ -34,6 +34,7 @@
 ## 这一章的代码学习要求
 
 - 先说清知识点，再看知识点如何落到代码上
+- 先读 `02-concepts.md` 后半部分的最小代码示例，再进入项目代码
 - 看代码时优先看主路径，不急着把所有细节一次看完
 - 每完成一个小节，都要能用自然语言解释新增逻辑
 - 不把 AI 已经写好了误当成自己已经掌握了

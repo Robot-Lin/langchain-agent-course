@@ -11,6 +11,7 @@
 - [05-cross-cutting-systems/README.md](X:/AI%20work/LangChain%20Tutorial/02-knowledge-base/05-cross-cutting-systems/README.md)
 - [06-frontend-agent-experience/README.md](X:/AI%20work/LangChain%20Tutorial/02-knowledge-base/06-frontend-agent-experience/README.md)
 - [07-agent-framework-landscape/README.md](X:/AI%20work/LangChain%20Tutorial/02-knowledge-base/07-agent-framework-landscape/README.md)
+- [08-official-docs-and-langsmith/README.md](X:/AI%20work/LangChain%20Tutorial/02-knowledge-base/08-official-docs-and-langsmith/README.md)
 
 ## 推荐阅读顺序
 
@@ -21,9 +22,11 @@
 5. Cross-cutting Systems
 6. Frontend Agent Experience
 7. Agent Framework Landscape
+8. Official Docs and LangSmith
 
 ## 怎么用这部分
 
 - 阶段学习时，把它当“回查资料库”。
 - 做项目时，把它当“专题知识支撑库”。
 - 做课后项目时，如果你发现某个概念理解不稳，就回到对应主题目录补课。
+- 如果你想知道某个知识点在官方 LangChain Docs 里对应哪一页，也从这里进入。

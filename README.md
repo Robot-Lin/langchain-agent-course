@@ -3,10 +3,10 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](./LICENSE)
 ![Course Stages](https://img.shields.io/badge/Stages-1--8-blue)
 ![Project Mode](https://img.shields.io/badge/Learning-Project--Based-orange)
-![Agent Stack](https://img.shields.io/badge/Stack-LangChain%20%7C%20LangGraph%20%7C%20Deep%20Agents-black)
+![Agent Stack](https://img.shields.io/badge/Stack-LangChain%20%7C%20LangGraph%20%7C%20Deep%20Agents%20%7C%20LangSmith-black)
 ![Build Status](https://img.shields.io/badge/Status-Code%20Reading%20Track%20Integrated-success)
 
-一个面向 IDE + Codex 协作学习的完整 Agent 教学课程，围绕 `LangChain`、`LangGraph`、`Deep Agents` 展开，并系统覆盖 `MCP`、`RAG`、`Memory`、数据库、后端 API、前端 Agent UX、评测、观测、部署与毕业项目。
+一个面向 IDE + Codex 协作学习的完整 Agent 教学课程，围绕 `LangChain`、`LangGraph`、`Deep Agents`、`LangSmith` 展开，并系统覆盖 `MCP`、`RAG`、`Memory`、数据库、后端 API、前端 Agent UX、评测、观测、部署与毕业项目。
 
 这套课程的目标不是只让学习者“调通一个 Agent”，而是让学习者在 AI Agent 的帮助下，从后端到前端构建一个功能完整、结构清晰、可评测、可迭代的 Agent 产品，并且看得懂它是如何被实现出来的。
 
@@ -39,6 +39,7 @@
 - 判断一个问题是否真的需要 Agent
 - 说清 `LangChain`、`LangGraph`、`Deep Agents` 的分工与边界
 - 设计 Agent 的工具层、知识层、状态层、体验层、治理层和评测层
+- 说明 `LangSmith` 在观测、评测、部署和工程闭环中的角色
 - 在 AI Agent 协作下完成一个从后端到前端的 Agent 产品原型
 - 看懂 Agent 项目里的关键代码、关键文件和关键逻辑
 - 对 AI 写出的代码做审核判断，而不是只接受结果
@@ -58,6 +59,7 @@
 常用入口：
 
 - [Project Teaching Protocol](./03-projects/ai-project-teaching-protocol.md)
+- [Official Docs & LangSmith Knowledge Base](./02-knowledge-base/08-official-docs-and-langsmith/README.md)
 - [Course Build Status](./COURSE_BUILD_STATUS.md)
 - [Repository Roadmap](./ROADMAP.md)
 - [Changelog](./CHANGELOG.md)
@@ -69,9 +71,9 @@ Stage 1  Agent Foundations     -> 判断一个需求是否真的需要 Agent
 Stage 2  LangChain Builder     -> 搭出高层 Agent 原型
 Stage 3  LangGraph Systems     -> 设计状态、分支、审批与恢复
 Stage 4  Deep Agents           -> 处理复杂任务、规划、子代理与上下文工程
-Stage 5  Agent Engineering     -> 接入 MCP / RAG / Memory / DB / API / Eval
+Stage 5  Agent Engineering     -> 接入 MCP / RAG / Memory / DB / API / LangSmith Eval
 Stage 6  Agent Frontend        -> 设计 Agent UX、Streaming、审批界面、状态可视化
-Stage 7  Full-stack Delivery   -> 组装、部署、追踪、评测、交付
+Stage 7  Full-stack Delivery   -> 组装、部署、追踪、LangSmith 观测与交付
 Stage 8  Capstone Mastery      -> 完成毕业项目、答辩、复盘与迁移
 ```
 
@@ -83,6 +85,7 @@ Stage 8  Capstone Mastery      -> 完成毕业项目、答辩、复盘与迁移
 - 每个阶段的知识、方法、引导项目、主动练习、放行清单、Codex 对练、session 路线和案例对照
 - 分阶段项目目录与 AI 项目教学协议
 - 全栈 Agent 学习路径、阶段放行标准与 Rubric
+- 官方 LangChain Docs 与 LangSmith 已纳入课程知识来源
 - 仓库首页、课程总导航和高频入口校准
 - 课程主设计里已明确加入“代码理解与审核”要求
 - `Stage 1-8` 的项目、考核与对练都已经接入读码主线
@@ -134,6 +137,7 @@ Stage 8  Capstone Mastery      -> 完成毕业项目、答辩、复盘与迁移
 - [AI Project Teaching Protocol](./03-projects/ai-project-teaching-protocol.md)
 - [Project Catalog](./03-projects/project-catalog.md)
 - [Project Templates](./03-projects/templates/README.md)
+- [Official Docs & LangSmith Knowledge Base](./02-knowledge-base/08-official-docs-and-langsmith/README.md)
 
 ## Repository Guide
 

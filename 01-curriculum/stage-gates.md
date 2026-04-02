@@ -31,6 +31,7 @@
 - LangChain 解决的核心问题是什么
 - 什么问题用 LangChain 就够了
 - Structured output、tools、middleware 分别解决什么问题
+- 本章对应的官方 LangChain Docs 页面分别支持了哪些实现判断
 
 你需要完成：
 
@@ -44,6 +45,7 @@
 - 为什么要从链式思维切换到图式思维
 - durable execution 的实际价值是什么
 - interrupt 与 human-in-the-loop 在什么业务里是必要的
+- 本章对应的官方 LangGraph Docs 页面分别支持了哪些运行时判断
 
 你需要完成：
 
@@ -57,6 +59,7 @@
 - Deep Agents 与普通 Agent 的结构差别是什么
 - 什么时候需要 subagents
 - context engineering 为什么不是“多塞点上下文”
+- 本章对应的官方 Deep Agents Docs 页面分别支持了哪些任务组织判断
 
 你需要完成：
 
@@ -67,7 +70,7 @@
 
 你需要能回答：
 
-- MCP、RAG、数据库、API、observability 分别位于系统哪一层
+- MCP、RAG、数据库、API、LangSmith observability / evaluation 分别位于系统哪一层
 - 哪些问题应该靠知识检索解决，哪些应该靠工作流或业务系统解决
 - Agent 权限为什么需要治理
 
@@ -95,7 +98,7 @@
 
 - 前端、后端、Agent runtime 和知识层之间如何协同
 - 为什么 streaming integration 对 Agent 产品关键
-- deployment、observability、evaluation 如何影响产品可用性
+- LangSmith deployment、observability、evaluation 如何影响产品可用性
 - 为什么同一 Agent 需求在不同框架下会有不同最优解
 
 你需要完成：
@@ -125,5 +128,6 @@
 - 能独立提出一个 Agent 产品想法
 - 能把它拆成模型层、工具层、知识层、状态层、体验层和评测层
 - 能说明为什么使用 LangChain、LangGraph 或 Deep Agents
+- 能说明 LangSmith 在工程闭环里的位置
 - 能和 Codex 协作把它逐步构建出来
 - 能交付一个从后端到前端的完整 Agent 产品原型

@@ -25,8 +25,9 @@ LangChain 高层定位、tool 最小化、structured output、middleware、short
 2. 只保留一个最必要的工具
 3. 先设计 structured output 再谈提示词
 4. 补基础控制逻辑与澄清条件
-5. 完成原型后先逐段读懂 agent、tool 和 schema
-6. 再做一次全项目扫描，解释每个主要文件的职责和连接关系
+5. 先对照 `02-concepts.md` 后半部分的代码教材和 `03-methods.md` 末尾的 API 对照附录理解最小代码结构
+6. 完成原型后先逐段读懂 agent、tool 和 schema
+7. 再做一次全项目扫描，解释每个主要文件的职责和连接关系
 
 ## 本章必须完成的代码导读
 

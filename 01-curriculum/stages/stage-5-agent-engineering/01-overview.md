@@ -71,7 +71,7 @@ Stage 4 解决的是复杂任务组织：规划、上下文工程、子代理、
 - 一张工程化 Agent 架构图。
 - 一份知识层与工具层说明。
 - 一份 memory / database / API 设计边界说明。
-- 一份 observability 与 evaluation 方案。
+- 一份 LangSmith observability 与 evaluation 方案。
 - 一份最小权限与审计清单。
 
 ## 进入 Stage 6 前的判断标准

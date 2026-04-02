@@ -2,6 +2,8 @@
 
 这一章关注的不是 `Stage 2` 的概念定义，而是拿到一个 LangChain 项目以后，应该怎么下手。
 
+如果你更适合“先看代码，再反推方法”，建议先读完 [02-concepts.md](./02-concepts.md) 后半部分的代码教材，再回到本文件。
+
 ## 方法一: 高层原型四步法
 
 面对一个 `LangChain` 项目，先做四步:
@@ -136,3 +138,172 @@
 ## Stage 2 的方法目标
 
 真正掌握本阶段，不是“会调用 LangChain”，而是能把一个合理的 Agent 设计推进成结构清楚、输出可靠、可演示、可评审的高层原型。
+
+## 附录：Stage 2 API 对照读法
+
+这一节把 `Stage 2` 的知识点和 LangChain 官方 API 做一张清晰对照表。
+
+目标不是背 API，而是回答：
+
+- 这个知识点会落到哪个模块
+- 这段代码为什么写在这里
+- 这个 API 在项目里通常负责哪一层
+
+### 总表
+
+| 课程知识点 | 主要 API / 模块 | 在项目里通常负责什么 |
+| --- | --- | --- |
+| 高层 Agent 入口 | `langchain.agents.create_agent` | 装配高层 agent 主入口 |
+| 工具接入 | `langchain.tools.tool` | 把 Python 函数包装成 agent 可调用工具 |
+| 结构化输出 | `response_format` | 让结果变成可验证、可复用结构 |
+| Tool strategy | `langchain.agents.structured_output.ToolStrategy` | 用 tool calling 方式完成结构化输出 |
+| Human-in-the-loop | `langchain.agents.middleware.HumanInTheLoopMiddleware` | 对敏感工具调用加审核 |
+| 短期记忆 | `checkpointer` | 给线程级上下文提供持久化能力 |
+| 自定义状态 | `state_schema` | 给 agent 增加自定义状态字段 |
+| 中间控制逻辑 | `middleware` | 把控制规则从 prompt 中拆出来 |
+
+### 1. `create_agent`
+
+官方来源：
+
+- [Agents](https://docs.langchain.com/oss/python/langchain/agents)
+- [LangChain v1 create_agent](https://docs.langchain.com/oss/python/releases/langchain-v1#create_agent)
+
+它在课程里的意义：
+
+- `Stage 2` 的高层原型入口
+- 帮你先把模型、工具、输出和 middleware 装起来
+
+你在项目里看到它时，要先问：
+
+- 这个 agent 的主任务是什么
+- 这里挂了哪些工具
+- 这里有没有 response_format
+- 这里有没有 middleware
+
+### 2. `@tool`
+
+官方来源：
+
+- [Agents](https://docs.langchain.com/oss/python/langchain/agents)
+
+它在课程里的意义：
+
+- 把“外部能力”变成 agent 可调用的标准单元
+
+你在项目里看到它时，要先问：
+
+- 这个工具真的必要吗
+- 输入输出是否稳定
+- 工具是让主路径更清楚，还是更混乱
+
+### 3. `response_format`
+
+官方来源：
+
+- [Structured output](https://docs.langchain.com/oss/python/langchain/structured-output)
+
+它在课程里的意义：
+
+- 把“输出长什么样”提前固定下来
+- 这是从提示词思维转向系统结构思维的重要节点
+
+你在项目里看到它时，要先问：
+
+- 这个 schema 是给谁消费的
+- 它是只给人看，还是还能给系统继续处理
+- 哪些字段会决定后续控制逻辑
+
+### 4. `ToolStrategy`
+
+官方来源：
+
+- [Structured output](https://docs.langchain.com/oss/python/langchain/structured-output)
+
+它在课程里的意义：
+
+- 当模型不能直接走 provider-native structured output 时，用 tool calling 方式完成结构化输出
+
+你在项目里看到它时，要先问：
+
+- 这里为什么要显式指定 `ToolStrategy`
+- 这个 schema 验证失败时，系统应该怎么处理
+
+### 5. `HumanInTheLoopMiddleware`
+
+官方来源：
+
+- [Human-in-the-loop](https://docs.langchain.com/oss/python/langchain/human-in-the-loop)
+
+它在课程里的意义：
+
+- 在高层原型阶段就开始建立审核边界
+
+你在项目里看到它时，要先问：
+
+- 哪些工具需要审核
+- 哪些工具不需要审核
+- 为什么这里需要 checkpointing
+
+### 6. `checkpointer`
+
+官方来源：
+
+- [Short-term memory](https://docs.langchain.com/oss/python/langchain/short-term-memory)
+- [Human-in-the-loop](https://docs.langchain.com/oss/python/langchain/human-in-the-loop)
+
+它在课程里的意义：
+
+- 给线程级上下文、短期记忆和中断恢复提供持久化基础
+
+你在项目里看到它时，要先问：
+
+- 这里是为了 short-term memory，还是为了处理 interrupts
+- 当前线程边界是什么
+
+### 7. `state_schema`
+
+官方来源：
+
+- [Short-term memory](https://docs.langchain.com/oss/python/langchain/short-term-memory)
+
+它在课程里的意义：
+
+- 在高层层面给 agent 增加更明确的状态字段
+
+你在项目里看到它时，要先问：
+
+- 默认 messages 已经够了吗
+- 这里新增状态字段是为了什么
+- 这个状态是真需要，还是只是“想记更多”
+
+### 8. `middleware`
+
+官方来源：
+
+- [LangChain v1 create_agent](https://docs.langchain.com/oss/python/releases/langchain-v1#create_agent)
+- [Middleware integrations](https://docs.langchain.com/oss/python/integrations/middleware/index)
+
+它在课程里的意义：
+
+- 把系统行为控制从 prompt 里拆出来
+
+你在项目里看到它时，要先问：
+
+- 这里控制的是模型调用、工具调用，还是输入输出
+- 这条规则为什么不直接写进 prompt
+
+### 读代码时的固定顺序
+
+以后在 `Stage 2` 看到一份 LangChain 代码，先按这个顺序读：
+
+1. 找 `create_agent`
+2. 看 tools
+3. 看 `response_format`
+4. 看 middleware
+5. 看 `checkpointer` / `state_schema`
+6. 再看 `invoke` 的输入输出
+
+### 这一节最该记住的话
+
+`Stage 2` 不是让你背很多 LangChain API，而是学会把“主任务、工具、输出、控制逻辑、短期状态”映射到一组清楚的高层接口上。

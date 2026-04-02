@@ -20,6 +20,7 @@
 
 - [01-overview.md](./01-overview.md)
 - [02-concepts.md](./02-concepts.md)
+- [03-methods.md](./03-methods.md) 末尾附录
 
 ### 要做什么
 
@@ -43,6 +44,7 @@
 
 - [02-concepts.md](./02-concepts.md)
 - [03-methods.md](./03-methods.md)
+- [02-concepts.md](./02-concepts.md) 后半部分代码教材
 
 ### 要做什么
 
@@ -67,6 +69,7 @@
 
 - [02-concepts.md](./02-concepts.md)
 - [09-case-comparisons.md](./09-case-comparisons.md)
+- [02-concepts.md](./02-concepts.md) 后半部分代码教材
 
 ### 要做什么
 
@@ -90,6 +93,7 @@
 ### 先读什么
 
 - [03-methods.md](./03-methods.md)
+- [03-methods.md](./03-methods.md) 末尾附录
 
 ### 要做什么
 
@@ -125,6 +129,7 @@
 - 工具定义
 - 输出 schema
 - 边界复盘
+- 一份最小代码讲解
 
 ## Session 6: 独立完成课后项目
 

@@ -34,7 +34,7 @@ Stage 6 已经解决了产品体验层。但如果没有完整交付层，系统
 - Agent Server 负责以面向 Agent 的方式暴露运行能力。
 - Deployment 负责运行、管理和扩展交付环境。
 - Streaming API 让前端能接收运行中反馈，而不是只拿最终答案。
-- Observability 和 Evaluation 成为产品可靠性的组成部分，而不是研究阶段的附属工具。
+- LangSmith Observability 和 Evaluation 成为产品可靠性的组成部分，而不是研究阶段的附属工具。
 
 ## 学习节奏建议
 
@@ -64,7 +64,7 @@ Stage 6 已经解决了产品体验层。但如果没有完整交付层，系统
 
 - 一张全栈 Agent 系统图。
 - 一份前后端与 Agent runtime 链路说明。
-- 一份 deployment、observability、evaluation 方案。
+- 一份 deployment、LangSmith observability、LangSmith evaluation 方案。
 - 一份产品交付验收说明。
 - 一份框架选型与取舍说明。
 
