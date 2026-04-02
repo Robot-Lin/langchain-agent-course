@@ -76,6 +76,13 @@
 - 代码审核要求
 - 全项目理解要求
 
+从 `Stage 2` 开始，还会逐步补进：
+
+- 主讲义内置代码教材
+- 方法文档内置 API 对照
+- 官方 Docs 对应关系
+- `10-full-project-reading.md` 这类全项目阅读入口
+
 ## Project Pairing
 
 每个阶段都对应一组项目入口，推荐和阶段教材一起读：
@@ -98,3 +105,16 @@
 - 解释一条主路径如何从输入走到输出
 - 对 AI 写出的代码做基本审核判断
 - 逐步解释整个项目如何由多个文件和模块组织起来
+
+## Framework Order
+
+这里的阶段顺序已经统一到新版官方架构：
+
+- `Stage 2`
+  用 `LangChain` 学高层 Agent 开发与原型装配
+- `Stage 3`
+  用 `LangGraph` 学 runtime / orchestration
+- `Stage 4`
+  用 `Deep Agents` 学复杂任务组织
+- `Stage 5` 之后
+  持续补齐 `LangSmith`、工程化、前端与全栈交付

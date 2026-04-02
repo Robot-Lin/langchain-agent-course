@@ -7,6 +7,9 @@
 - 从概念理解到架构选择，再到项目实践与交付
 - 每个阶段都有可交付成果
 - 每个阶段都尽量可以在“少写代码、与 Codex 共学”的前提下推进
+- 从 `Stage 2` 开始，知识文档本身要逐步兼顾代码示例、逐段解释、API 对照和全项目理解
+- 后续框架顺序严格按新版官方定义推进：
+  `LangChain -> LangGraph -> Deep Agents -> LangSmith`
 
 ## Stage 0: 学习环境与协作方式
 
@@ -59,6 +62,7 @@
 - Tools 与 structured output
 - Middleware
 - 基础 human-in-the-loop
+- 代码教材、API 对照与全项目阅读起点
 
 建议项目：
 
@@ -82,6 +86,7 @@
 - Interrupts
 - Human-in-the-loop
 - Multi-step workflow
+- LangGraph 代码教材与整图阅读
 
 建议项目：
 
@@ -104,6 +109,7 @@
 - Subagents
 - Human approval
 - 长任务与复杂目标执行
+- 复杂任务系统的全项目扫描
 
 建议项目：
 
@@ -126,6 +132,7 @@
 - LangSmith Observability
 - LangSmith Evaluation
 - Governance
+- 工程系统代码与治理路径
 
 建议项目：
 
@@ -149,6 +156,7 @@
 - Human-in-the-loop UI
 - History / source visibility
 - Multi-panel experience
+- 前端全项目阅读与主路径解释
 
 建议项目：
 
@@ -173,6 +181,7 @@
 - LangSmith Observability
 - LangSmith Evaluation
 - Framework selection
+- 全栈交付代码答辩
 
 建议项目：
 
@@ -200,6 +209,7 @@
 
 - 能在 AI Agent 协作下完成一个从后端到前端的完整项目
 - 能解释其架构、状态、知识、工具、交互、评测和交付设计
+- 能从目录、文件、函数、调用链到框架能力，完整解释整个项目
 - 能完成一次完整复盘并规划后续迭代
 
 ## 官方文档锚点
