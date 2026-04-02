@@ -154,3 +154,204 @@ interrupt 的核心不是“停”，而是:
 ## Stage 3 的方法目标
 
 真正掌握本阶段，不是“会画图”，而是能把复杂任务的控制逻辑、状态逻辑和恢复逻辑设计成一个可解释、可恢复、可审核的系统。
+
+## 附录：Stage 3 API 对照读法
+
+这一节把 `Stage 3` 的知识点和 LangGraph 官方 API 做一张清晰对照表。
+
+目标不是背 API，而是回答：
+
+- 这个知识点会落到哪个模块
+- 这段代码为什么写在这里
+- 这个 API 在项目里通常负责哪一层
+
+### 总表
+
+| 课程知识点 | 主要 API / 模块 | 在项目里通常负责什么 |
+| --- | --- | --- |
+| 图入口 | `langgraph.graph.StateGraph` | 定义整张图围绕哪个 state 运行 |
+| 图起止点 | `START` / `END` | 明确控制流的起点与终点 |
+| 节点接入 | `add_node` | 把处理逻辑挂到图里 |
+| 顺序边 | `add_edge` | 定义固定控制流 |
+| 条件边 | `add_conditional_edges` | 定义显式路由与分支 |
+| 运行中跳转 | `langgraph.types.Command` | 同时更新状态并决定下一步 |
+| 动态暂停 | `langgraph.types.interrupt` | 设置正式暂停点并等待外部输入 |
+| 持久化 | `compile(checkpointer=...)` | 让 interrupt、恢复、历史状态成立 |
+| 线程状态读取 | `get_state` / `get_state_history` | 读取快照与历史检查点 |
+| 运行反馈 | `stream(..., version=\"v2\")` | 把更新、消息和任务事件流式输出 |
+
+### 1. `StateGraph`
+
+官方来源：
+
+- [Use the graph API](https://docs.langchain.com/oss/python/langgraph/use-graph-api)
+- [Graph API overview](https://docs.langchain.com/oss/python/langgraph/graph-api)
+
+它在课程里的意义：
+
+- `Stage 3` 的 runtime 入口
+- 告诉你整张图的共享 state 是什么
+
+你在项目里看到它时，要先问：
+
+- 这个 state schema 是否过重或过轻
+- 图是围绕什么运行事实在组织
+
+### 2. `START` / `END`
+
+官方来源：
+
+- [Use the graph API](https://docs.langchain.com/oss/python/langgraph/use-graph-api)
+
+它在课程里的意义：
+
+- 把控制流起点和终点显式化
+
+你在项目里看到它时，要先问：
+
+- 这条主路径是如何进入图的
+- 图在哪些条件下真正结束
+
+### 3. `add_node`
+
+官方来源：
+
+- [Use the graph API](https://docs.langchain.com/oss/python/langgraph/use-graph-api)
+
+它在课程里的意义：
+
+- 把处理逻辑和图结构连接起来
+
+你在项目里看到它时，要先问：
+
+- 这个节点负责什么
+- 它返回的 state 更新是否足够清楚
+- 这里有没有不该放进节点的副作用
+
+### 4. `add_edge`
+
+官方来源：
+
+- [Use the graph API](https://docs.langchain.com/oss/python/langgraph/use-graph-api)
+
+它在课程里的意义：
+
+- 表达固定顺序路径
+
+你在项目里看到它时，要先问：
+
+- 这条边是不是固定必经
+- 这里有没有本该显式分支却被硬塞成顺序路径
+
+### 5. `add_conditional_edges`
+
+官方来源：
+
+- [Use the graph API](https://docs.langchain.com/oss/python/langgraph/use-graph-api)
+
+它在课程里的意义：
+
+- 把路由判断显式写出来
+
+你在项目里看到它时，要先问：
+
+- 条件函数到底基于哪些 state 字段在判断
+- 路由是否真的覆盖了关键分支
+- 这条判断是不是应该被审核
+
+### 6. `Command`
+
+官方来源：
+
+- [Use the graph API](https://docs.langchain.com/oss/python/langgraph/use-graph-api)
+- [Interrupts](https://docs.langchain.com/oss/python/langgraph/interrupts)
+
+它在课程里的意义：
+
+- 让节点可以同时做状态更新和控制流跳转
+
+你在项目里看到它时，要先问：
+
+- 这里为什么不用普通 edge
+- 这个节点是不是既在更新 state，又在决定 goto
+- `Command(resume=...)` 是在图输入侧恢复，还是在节点返回侧跳转
+
+### 7. `interrupt`
+
+官方来源：
+
+- [Interrupts](https://docs.langchain.com/oss/python/langgraph/interrupts)
+
+它在课程里的意义：
+
+- 正式暂停图执行，等待外部输入
+
+你在项目里看到它时，要先问：
+
+- 这里为什么必须停
+- payload 是否是 JSON 可序列化
+- 节点在 resume 时会不会重跑前半段逻辑
+- 这里前面的副作用是否幂等
+
+### 8. `compile(checkpointer=...)`
+
+官方来源：
+
+- [Persistence](https://docs.langchain.com/oss/python/langgraph/persistence)
+- [Interrupts](https://docs.langchain.com/oss/python/langgraph/interrupts)
+
+它在课程里的意义：
+
+- 让 checkpoint、interrupt、恢复和历史快照真正可用
+
+你在项目里看到它时，要先问：
+
+- 当前用的是开发期 saver 还是生产级 saver
+- 这条线程如何用 `thread_id` 定位
+
+### 9. `get_state` / `get_state_history`
+
+官方来源：
+
+- [Persistence](https://docs.langchain.com/oss/python/langgraph/persistence)
+
+它在课程里的意义：
+
+- 让你能从“我猜系统停在哪里”升级到“我直接看快照和历史”
+
+你在项目里看到它时，要先问：
+
+- 当前快照反映的是哪个 super-step
+- 我是要看最新状态，还是整条线程历史
+
+### 10. `stream(..., version=\"v2\")`
+
+官方来源：
+
+- [Streaming](https://docs.langchain.com/oss/python/langgraph/streaming)
+
+它在课程里的意义：
+
+- 让运行中的图对前端和调试层可见
+
+你在项目里看到它时，要先问：
+
+- 这里到底需要 `updates`、`values`、`messages` 还是 `custom`
+- 为什么这里要显式用 `version=\"v2\"`
+- 前端到底消费的是哪个 `chunk[\"type\"]`
+
+### 读代码时的固定顺序
+
+以后在 `Stage 3` 看到一份 LangGraph 代码，先按这个顺序读：
+
+1. 找 `StateGraph(...)`
+2. 看 state schema
+3. 看 `add_node`
+4. 看 `add_edge` / `add_conditional_edges`
+5. 看 `interrupt` / `Command`
+6. 看 `compile(checkpointer=...)`
+7. 再看 `invoke` / `stream` / `get_state_history`
+
+### 这一节最该记住的话
+
+`Stage 3` 不是让你背很多 LangGraph API，而是学会把“状态、节点、分支、暂停、恢复、可见性”映射到一组显式的运行时接口上。
