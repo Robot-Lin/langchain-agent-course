@@ -12,8 +12,9 @@
 建议动作：
 
 1. 阅读 [01-overview.md](X:/AI%20work/LangChain%20Tutorial/01-curriculum/stages/stage-7-fullstack-delivery/01-overview.md) 和 [02-concepts.md](X:/AI%20work/LangChain%20Tutorial/01-curriculum/stages/stage-7-fullstack-delivery/02-concepts.md)。
-2. 随便选 2 个你熟悉的 Agent 想法，判断它们离“可交付产品”还差什么。
-3. 让 Codex 帮你纠正对交付层的误解。
+2. 重点读 [02-concepts.md](X:/AI%20work/LangChain%20Tutorial/01-curriculum/stages/stage-7-fullstack-delivery/02-concepts.md) 里后半段的代码教材。
+3. 随便选 2 个你熟悉的 Agent 想法，判断它们离“可交付产品”还差什么。
+4. 让 Codex 帮你纠正对交付层的误解。
 
 ## Session 2: 学会全栈组装与选型
 
@@ -25,8 +26,9 @@
 建议动作：
 
 1. 阅读 [03-methods.md](X:/AI%20work/LangChain%20Tutorial/01-curriculum/stages/stage-7-fullstack-delivery/03-methods.md)。
-2. 用一个真实需求画出最小交付链路。
-3. 用 [09-case-comparisons.md](X:/AI%20work/LangChain%20Tutorial/01-curriculum/stages/stage-7-fullstack-delivery/09-case-comparisons.md) 做对照。
+2. 重点读 `03-methods.md` 里的 API 对照附录。
+3. 用一个真实需求画出最小交付链路。
+4. 用 [09-case-comparisons.md](X:/AI%20work/LangChain%20Tutorial/01-curriculum/stages/stage-7-fullstack-delivery/09-case-comparisons.md) 做对照。
 
 ## Session 3: 做跟学项目
 
@@ -37,8 +39,9 @@
 建议动作：
 
 1. 按 [04-guided-project.md](X:/AI%20work/LangChain%20Tutorial/01-curriculum/stages/stage-7-fullstack-delivery/04-guided-project.md) 做一遍引导项目。
-2. 产出一张完整系统图和一份交付说明。
-3. 让 Codex 站在交付评审角度做反馈。
+2. 用 [10-full-project-reading.md](X:/AI%20work/LangChain%20Tutorial/01-curriculum/stages/stage-7-fullstack-delivery/10-full-project-reading.md) 扫一遍全项目结构。
+3. 产出一张完整系统图、一份交付说明和一份全项目组件地图。
+4. 让 Codex 站在交付评审角度做反馈。
 
 ## Session 4: 做 challenge 与放行
 
@@ -52,6 +55,7 @@
 1. 完成 [05-challenges.md](X:/AI%20work/LangChain%20Tutorial/01-curriculum/stages/stage-7-fullstack-delivery/05-challenges.md)。
 2. 用 [06-review-checklist.md](X:/AI%20work/LangChain%20Tutorial/01-curriculum/stages/stage-7-fullstack-delivery/06-review-checklist.md) 自测。
 3. 按 [07-codex-workshop.md](X:/AI%20work/LangChain%20Tutorial/01-curriculum/stages/stage-7-fullstack-delivery/07-codex-workshop.md) 让 Codex 做一次正式交付评审。
+4. 重点检查自己能不能把 Agent Server、threads、runs、streaming 和 traces 对应到完整调用链上。
 
 ## 本章完成标志
 
