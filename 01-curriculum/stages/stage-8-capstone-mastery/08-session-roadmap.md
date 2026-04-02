@@ -12,8 +12,9 @@
 建议动作：
 
 1. 阅读 [01-overview.md](X:/AI%20work/LangChain%20Tutorial/01-curriculum/stages/stage-8-capstone-mastery/01-overview.md) 和 [02-concepts.md](X:/AI%20work/LangChain%20Tutorial/01-curriculum/stages/stage-8-capstone-mastery/02-concepts.md)。
-2. 列出 3 个毕业方向，先自己筛一次。
-3. 让 Codex 帮你做覆盖和风险比较。
+2. 重点读 [02-concepts.md](X:/AI%20work/LangChain%20Tutorial/01-curriculum/stages/stage-8-capstone-mastery/02-concepts.md) 里后半段的代码教材。
+3. 列出 3 个毕业方向，先自己筛一次。
+4. 让 Codex 帮你做覆盖和风险比较。
 
 ## Session 2: 综合架构与主路径
 
@@ -25,8 +26,9 @@
 建议动作：
 
 1. 阅读 [03-methods.md](X:/AI%20work/LangChain%20Tutorial/01-curriculum/stages/stage-8-capstone-mastery/03-methods.md)。
-2. 画出综合系统图和用户主路径。
-3. 用 [09-case-comparisons.md](X:/AI%20work/LangChain%20Tutorial/01-curriculum/stages/stage-8-capstone-mastery/09-case-comparisons.md) 做对照。
+2. 重点读 `03-methods.md` 里的读码与答辩对照表。
+3. 画出综合系统图和用户主路径。
+4. 用 [09-case-comparisons.md](X:/AI%20work/LangChain%20Tutorial/01-curriculum/stages/stage-8-capstone-mastery/09-case-comparisons.md) 做对照。
 
 ## Session 3: 演示与答辩
 
@@ -38,8 +40,9 @@
 建议动作：
 
 1. 按 [04-guided-project.md](X:/AI%20work/LangChain%20Tutorial/01-curriculum/stages/stage-8-capstone-mastery/04-guided-project.md) 整理毕业材料。
-2. 产出一版 3 分钟演示稿和一版答辩提纲。
-3. 让 Codex 做模拟评审。
+2. 用 [10-full-project-reading.md](X:/AI%20work/LangChain%20Tutorial/01-curriculum/stages/stage-8-capstone-mastery/10-full-project-reading.md) 扫一遍完整项目。
+3. 产出一版 3 分钟演示稿、一版答辩提纲和一份全项目文件地图。
+4. 让 Codex 做模拟评审。
 
 ## Session 4: 复盘与方法迁移
 
@@ -52,6 +55,7 @@
 1. 完成 [05-challenges.md](X:/AI%20work/LangChain%20Tutorial/01-curriculum/stages/stage-8-capstone-mastery/05-challenges.md)。
 2. 用 [06-review-checklist.md](X:/AI%20work/LangChain%20Tutorial/01-curriculum/stages/stage-8-capstone-mastery/06-review-checklist.md) 自测。
 3. 按 [07-codex-workshop.md](X:/AI%20work/LangChain%20Tutorial/01-curriculum/stages/stage-8-capstone-mastery/07-codex-workshop.md) 做迁移训练。
+4. 重点检查自己能不能把目录、主路径、风险点和下一版路线完整讲出来。
 
 ## 本章完成标志
 

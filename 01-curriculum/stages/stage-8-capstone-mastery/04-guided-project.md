@@ -24,7 +24,8 @@ capstone selection、coverage check、main-path design、defense、review、retr
 2. 再补主路径和关键模块边界
 3. 加入观测、评测、治理与前端体验
 4. 整理答辩与复盘材料
-5. 最后完成系统 walkthrough 和代码讲解
+5. 回头对照 [02-concepts.md](./02-concepts.md) 里的代码教材和 [03-methods.md](./03-methods.md) 里的对照附录
+6. 最后按 [10-full-project-reading.md](./10-full-project-reading.md) 完成一次完整 walkthrough
 
 ## 本章必须完成的代码导读
 
@@ -33,11 +34,13 @@ capstone selection、coverage check、main-path design、defense、review、retr
 - 先列出关键文件或关键模块
 - 再说清它们各自负责什么
 - 再解释一条主路径如何从输入走到输出
+- 再补一张全项目组件与文件地图
 - 最后指出如果你来审核，会优先看哪 2 到 3 个风险点
 
 ## 最终交付物
 
 - 毕业项目方案、答辩提纲、系统 walkthrough、关键代码说明
+- 一份全项目组件与文件地图
 - 一份主路径解释
 - 一份用户审核要点清单
 
