@@ -24,7 +24,8 @@ MCP、RAG、memory、database、API、observability、evaluation、governance
 2. 再拆工具层、知识层、数据层、API 层
 3. 补日志、评测和治理入口
 4. 整理主链路的数据流
-5. 最后读懂接入层和观测层代码
+5. 回头对照 [02-concepts.md](./02-concepts.md) 里的代码教材和 [03-methods.md](./03-methods.md) 里的 API 对照
+6. 最后按 [10-full-project-reading.md](./10-full-project-reading.md) 扫完整个工程系统
 
 ## 本章必须完成的代码导读
 
@@ -33,11 +34,13 @@ MCP、RAG、memory、database、API、observability、evaluation、governance
 - 先列出关键文件或关键模块
 - 再说清它们各自负责什么
 - 再解释一条主路径如何从输入走到输出
+- 再补一张全项目文件地图，说明每一层落在哪些文件
 - 最后指出如果你来审核，会优先看哪 2 到 3 个风险点
 
 ## 最终交付物
 
 - 后端架构图、数据流说明、治理与评测设计、功能到代码映射
+- 一份全项目文件地图
 - 一份主路径解释
 - 一份用户审核要点清单
 
