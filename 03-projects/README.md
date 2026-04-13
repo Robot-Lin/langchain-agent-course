@@ -12,6 +12,7 @@
 
 - [project-catalog.md](X:/AI%20work/LangChain%20Tutorial/03-projects/project-catalog.md)
 - [ai-project-teaching-protocol.md](X:/AI%20work/LangChain%20Tutorial/03-projects/ai-project-teaching-protocol.md)
+- [Project Trainning/README.md](X:/AI%20work/LangChain%20Tutorial/03-projects/Project%20Trainning/README.md)
 - [templates/README.md](X:/AI%20work/LangChain%20Tutorial/03-projects/templates/README.md)
 
 ## 分阶段项目入口
@@ -24,6 +25,25 @@
 - [stage-6/README.md](X:/AI%20work/LangChain%20Tutorial/03-projects/stage-6/README.md)
 - [stage-7/README.md](X:/AI%20work/LangChain%20Tutorial/03-projects/stage-7/README.md)
 - [stage-8/README.md](X:/AI%20work/LangChain%20Tutorial/03-projects/stage-8/README.md)
+
+## 目录结构
+
+这个目录现在可以分成 4 类内容：
+
+- `stage-1/` 到 `stage-8/`
+  对应课程各阶段的项目与 challenge 入口
+- `Project Trainning/`
+  独立于课程主线的技术栈训练路线，按 `LangChain -> LangGraph -> Deep Agents` 分层组织
+- `templates/`
+  项目模板、规格模板与复用骨架
+- 规则类文档
+  例如 `project-catalog.md`、`ai-project-teaching-protocol.md`
+
+如果你现在的目标是：
+
+- 跟课程同步做项目：优先进入 `stage-*`
+- 按技术栈训练项目：优先进入 `Project Trainning/`
+- 和 AI 协作定义项目：优先读 `ai-project-teaching-protocol.md`
 
 ## 项目设计原则
 

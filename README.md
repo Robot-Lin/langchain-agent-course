@@ -59,10 +59,40 @@
 常用入口：
 
 - [Project Teaching Protocol](./03-projects/ai-project-teaching-protocol.md)
+- [Project Trainning](./03-projects/Project%20Trainning/README.md)
 - [Official Docs & LangSmith Knowledge Base](./02-knowledge-base/08-official-docs-and-langsmith/README.md)
 - [Course Build Status](./COURSE_BUILD_STATUS.md)
 - [Repository Roadmap](./ROADMAP.md)
 - [Changelog](./CHANGELOG.md)
+
+## Repository Structure
+
+如果你想先看清整个仓库的架构，可以先按下面这张地图理解：
+
+- `00-start-here/`
+  新用户入口、协作方式与使用说明
+- `01-curriculum/`
+  课程主框架、阶段路线、学习闭环与放行标准
+- `02-knowledge-base/`
+  课程知识库与官方 Docs 对照入口
+- `03-projects/`
+  分阶段项目、项目协议、训练路线与模板
+- `04-assessments/`
+  考核、评估与阶段验证材料
+- `05-codex-collaboration/`
+  和 Codex 协作学习与开发的方法说明
+- `06-reference-implementations/`
+  可运行参考实现与读码入口
+- `07-live-projects/`
+  正在共同推进的实战项目
+
+推荐阅读动线：
+
+1. 先从 [00-start-here/README.md](./00-start-here/README.md) 进入
+2. 再看 [01-curriculum/README.md](./01-curriculum/README.md) 理解课程主线
+3. 再看 [03-projects/README.md](./03-projects/README.md) 理解项目系统
+4. 如果要走项目训练路线，进入 [03-projects/Project Trainning/README.md](./03-projects/Project%20Trainning/README.md)
+5. 如果要看真实代码，进入 [06-reference-implementations/README.md](./06-reference-implementations/README.md) 和 [07-live-projects/README.md](./07-live-projects/README.md)
 
 ## Course Roadmap Snapshot
 
